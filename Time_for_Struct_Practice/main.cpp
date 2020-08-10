@@ -20,15 +20,20 @@ struct Time {
   int hour, minute, second;
 };
 
-void addSixHoursAndTenMinutes (Time &current) {
-  if (current.minute + 10 >= 60) {
-    current.hour++;
-    current.minute = (current.minute + 10) % 60;
+// add hours and minutes to Time passed in
+void addHoursAndMinutes (int hrs, int mins, Time &current) {
+  if (current.minute + mins >= 60) {
+    if (current.minute + mins < 120){
+      current.hour++;
+    } else {
+      current.hour += mins/60;
+    }
+    current.minute = (current.minute + mins) % 60;
   } else {
-    current.minute += 10;
+    current.minute += mins;
   }
 
-  if (current.hour + 6 >= 12) {
+  if (current.hour < 12 && current.hour + hrs >= 12) {
     if (current.timeOfDay.compare("AM") == 0) { // time of day is AM
       current.timeOfDay = "PM";
     } else {
@@ -36,10 +41,10 @@ void addSixHoursAndTenMinutes (Time &current) {
     }
   }
 
-  if (current.hour + 6 > 12) {
-    current.hour = (current.hour + 6) % 12;
+  if (current.hour + hrs > 12) {
+    current.hour = (current.hour + hrs) % 12;
   } else {
-    current.hour += 6;
+    current.hour += hrs;
   }
 }
 
@@ -56,24 +61,23 @@ int main() {
   Time test1 = {"AM", 3, 59, 01};
   Time test2 = {"PM", 8, 13, 59};
   Time test3 = {"AM", 5, 50, 43};
+  Time test4 = {"AM", 12, 00, 05};
 
-  cout << "Test 1\nBefore\n";
-  cout << formattedTime(test1) << endl;
-  cout << "After\n";
-  addSixHoursAndTenMinutes(test1);
-  cout << formattedTime(test1) << endl;
+  cout << "Test 1\nBefore\n" << formattedTime(test1) << endl;
+  addHoursAndMinutes(6,10,test1);
+  cout << "After\n" << formattedTime(test1) << endl;
 
-  cout << "\nTest 2\nBefore\n";
-  cout << formattedTime(test2) << endl;
-  cout << "After\n";
-  addSixHoursAndTenMinutes(test2);
-  cout << formattedTime(test2) << endl;
+  cout << "\nTest 2\nBefore\n" << formattedTime(test2) << endl;
+  addHoursAndMinutes(6,10,test2);
+  cout << "After\n" << formattedTime(test2) << endl;
 
-  cout << "\nTest 3\nBefore\n";
-  cout << formattedTime(test3) << endl;
-  cout << "After\n";
-  addSixHoursAndTenMinutes(test3);
-  cout << formattedTime(test3) << endl;
+  cout << "\nTest 3\nBefore\n" << formattedTime(test3) << endl;
+  addHoursAndMinutes(6,10,test3);
+  cout << "After\n" << formattedTime(test3) << endl;
+
+  cout << "\nTest 4\nBefore\n" << formattedTime(test4) << endl;
+  addHoursAndMinutes(2,240,test4);
+  cout << "After\n" << formattedTime(test4) << endl;
 
   return 0;
 }
