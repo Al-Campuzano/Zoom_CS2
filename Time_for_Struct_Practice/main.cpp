@@ -21,8 +21,26 @@ struct Time {
 };
 
 void addSixHoursAndTenMinutes (Time &current) {
-  current.hour += 6;
-  current.minute += 10;
+  if (current.minute + 10 >= 60) {
+    current.hour++;
+    current.minute = (current.minute + 10) % 60;
+  } else {
+    current.minute += 10;
+  }
+
+  if (current.hour + 6 >= 12) {
+    if (current.timeOfDay.compare("AM") == 0) { // time of day is AM
+      current.timeOfDay = "PM";
+    } else {
+      current.timeOfDay = "AM";
+    }
+  }
+
+  if (current.hour + 6 > 12) {
+    current.hour = (current.hour + 6) % 12;
+  } else {
+    current.hour += 6;
+  }
 }
 
 // "blackbox" function to return string of formatted time
@@ -35,13 +53,29 @@ string formattedTime (Time current) {
 }
 
 int main() {
-  Time test = {"AM", 3, 59, 01};
+  Time test1 = {"AM", 3, 59, 01};
+  Time test2 = {"PM", 8, 13, 59};
+  Time test3 = {"AM", 5, 50, 43};
   // before
-  cout << formattedTime(test) << endl;
+  cout << formattedTime(test1) << endl;
 
   // after
-  addSixHoursAndTenMinutes(test);
-  cout << formattedTime(test) << endl;
+  addSixHoursAndTenMinutes(test1);
+  cout << formattedTime(test1) << endl;
+
+  // before
+  cout << formattedTime(test2) << endl;
+
+  // after
+  addSixHoursAndTenMinutes(test2);
+  cout << formattedTime(test2) << endl;
+
+  // before
+  cout << formattedTime(test3) << endl;
+
+  // after
+  addSixHoursAndTenMinutes(test3);
+  cout << formattedTime(test3) << endl;
 
   return 0;
 }
