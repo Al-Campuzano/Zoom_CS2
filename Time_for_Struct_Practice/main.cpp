@@ -56,24 +56,22 @@ int main() {
   Time test1 = {"AM", 3, 59, 01};
   Time test2 = {"PM", 8, 13, 59};
   Time test3 = {"AM", 5, 50, 43};
-  // before
-  cout << formattedTime(test1) << endl;
 
-  // after
+  cout << "Test 1\nBefore\n";
+  cout << formattedTime(test1) << endl;
+  cout << "After\n";
   addSixHoursAndTenMinutes(test1);
   cout << formattedTime(test1) << endl;
 
-  // before
+  cout << "\nTest 2\nBefore\n";
   cout << formattedTime(test2) << endl;
-
-  // after
+  cout << "After\n";
   addSixHoursAndTenMinutes(test2);
   cout << formattedTime(test2) << endl;
 
-  // before
+  cout << "\nTest 3\nBefore\n";
   cout << formattedTime(test3) << endl;
-
-  // after
+  cout << "After\n";
   addSixHoursAndTenMinutes(test3);
   cout << formattedTime(test3) << endl;
 
