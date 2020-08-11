@@ -11,13 +11,6 @@ struct domino {
 // print entire dominoes set
 template <typename T>
 void printSet (const T &set, short int numOfTiles) {
-// old
-  // for (int i = 0; i < numOfTiles; i++) {
-  //   cout << set[i].sideA << ":" << set[i].sideB << '\n';
-  // }
-  // cout << '\n';
-  // new
-
   string lines[5] = {
     "|   |\n",
     "|*  |\n",
@@ -85,10 +78,9 @@ int main() {
   }
 
   printSet(set, TILES_NUM);
-  cout << "######Re-sorted descending by second side (B)########\n";
+  cout << "\n######Re-sorted descending by second side (B)########\n";
   sortBySideBDesc(set, TILES_NUM);
   printSet(set, TILES_NUM);
-
 
   return 0;
 }
