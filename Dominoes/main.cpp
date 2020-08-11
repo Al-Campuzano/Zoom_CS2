@@ -11,20 +11,52 @@ struct domino {
 // print entire dominoes set
 template <typename T>
 void printSet (const T &set, short int numOfTiles) {
+// old
+  // for (int i = 0; i < numOfTiles; i++) {
+  //   cout << set[i].sideA << ":" << set[i].sideB << '\n';
+  // }
+  // cout << '\n';
+  // new
+
+  string lines[5] = {
+    "|   |\n",
+    "|*  |\n",
+    "| * |\n",
+    "|  *|\n",
+    "|* *|\n"
+  };
+
+  string tiles[7] = {
+    lines[0] + lines[0] + lines[0],
+    lines[0] + lines[2] + lines[0],
+    lines[1] + lines[0] + lines[3],
+    lines[1] + lines[2] + lines[3],
+    lines[4] + lines[0] + lines[4],
+    lines[4] + lines[2] + lines[4],
+    lines[4] + lines[4] + lines[4]
+  };
+
+  string horizontalLine = " --- \n";
+  
   for (int i = 0; i < numOfTiles; i++) {
-    cout << set[i].sideA << ":" << set[i].sideB << endl;
+    cout << horizontalLine;
+    cout << tiles[set[i].sideA];
+    cout << horizontalLine;
+    cout << tiles[set[i].sideB];
+    cout << horizontalLine;
+    cout << endl;
   }
 }
 
-// ascending sorting by side B using selection sort
+// Descending sorting by side B using selection sort
 template <typename T>
-void sortBySideBAsc (T &set, short int numOfTiles) {
+void sortBySideBDesc (T &set, short int numOfTiles) {
   int startIndex = 0;
   while (startIndex < numOfTiles - 1) {
     int innerIndex = startIndex + 1;
     int lowestIndex = startIndex;
     while (innerIndex < numOfTiles) {
-      if (set[innerIndex].sideB < set[lowestIndex].sideB) {
+      if (set[innerIndex].sideB >= set[lowestIndex].sideB) {
         lowestIndex = innerIndex;
       }
       innerIndex++;
@@ -53,8 +85,8 @@ int main() {
   }
 
   printSet(set, TILES_NUM);
-  cout << "-------\n";
-  sortBySideBAsc(set, TILES_NUM);
+  cout << "######Re-sorted descending by second side (B)########\n";
+  sortBySideBDesc(set, TILES_NUM);
   printSet(set, TILES_NUM);
 
 
