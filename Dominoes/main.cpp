@@ -37,7 +37,7 @@ void printSet (const T &set, short int numOfTiles) {
   };
 
   string horizontalLine = " --- \n";
-  
+
   for (int i = 0; i < numOfTiles; i++) {
     cout << horizontalLine;
     cout << tiles[set[i].sideA];
