@@ -7,6 +7,13 @@ struct domino {
   short int sideB;
 };
 
+template <typename T>
+void printSet (const T &set, short int numOfTiles) {
+  for (int i = 0; i < numOfTiles; i++) {
+    cout << set[i].sideA << ":" << set[i].sideB << endl;
+  }
+}
+
 int main() {
   // short int test = 6;
   // cout << " Dominoes " << sizeof(test);
@@ -15,13 +22,16 @@ int main() {
   domino set[TILES_NUM];
 
   int index = 0;
-  for (int a = 0; a < MAX_PIPS; a++) {
-    for (int b = a; b < MAX_PIPS; b++) {
+  for (int a = 0; a <= MAX_PIPS; a++) {
+    for (int b = a; b <= MAX_PIPS; b++) {
       set[index].sideA = a;
       set[index].sideB = b;
       index++;
     }
   }
+
+  printSet(set, TILES_NUM);
+
 
   return 0;
 }
