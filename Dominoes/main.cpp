@@ -2,7 +2,13 @@
 
 using namespace std;
 
+struct domino {
+  short int sideA;
+  short int sideB;
+};
+
 int main() {
-  cout << "Dominoes";
+  // short int test = 6;
+  // cout << " Dominoes " << sizeof(test);
   return 0;
 }
