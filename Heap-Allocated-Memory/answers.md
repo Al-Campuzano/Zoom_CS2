@@ -9,3 +9,11 @@ Consider the difference between statically and dynamically allocated memory.
   Values being stored on the heap are initialized using the "new" keyword
 - When does memory for a value on the heap get deleted?
   When you use the "delete" keyword
+
+Question 2.
+
+![](https://screenshot.click/20-08-9fkn4-pdtv5.png)
+
+Question 3.
+
+![](https://screenshot.click/20-08-vau4l-v2pdz.png)
