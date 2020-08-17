@@ -14,5 +14,18 @@ int main()
   *(pointerArray[1]) = 10;
   *(pointerArray[3]) = 50;
 
+  for (int i = 0; i < 4; i++) {
+    if (pointerArray[i] != NULL) {
+      cout << *(pointerArray[i]) << endl;
+    }
+  }
+
+  for (int i = 0; i < sizeof(pointerArray)/sizeof(int*); i++) {
+    if (pointerArray[i] != NULL) {
+      delete pointerArray[i];
+      pointerArray[i] = NULL;
+    }
+  }
+
   return 0;
 }
