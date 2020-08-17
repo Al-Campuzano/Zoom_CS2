@@ -2,10 +2,10 @@
 using namespace std;
 
 /*
- * Removing the checks for NULL causes a segmentation fault error once the program tries
- * to access the value of the NULL pointer.
- * This error is thrown because that pointer does not have access to any part of memory
- * that we can safely use since no memory address has been assigned to it. 
+ * Removing the checks for NULL causes a segmentation fault error once the
+ * program tries to access the value of the NULL pointer.
+ * This error is thrown because that pointer does not have access to any part of
+ * memory that we can safely use since no memory address has been assigned to it. 
  */
 int main()
 {
