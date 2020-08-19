@@ -7,13 +7,12 @@ public class TestTape {
     }
   }
 
-  public static void stickTape(ScotchTape tape, float percentToUse) {
-
+  public static void stickTape(ScotchTape tape, double percentToUse) {
+    tape.weight -= (int)(tape.weight * percentToUse);
+    tape.length -= (int)(tape.length * percentToUse);
   }
 
   public static void main(String[] args) {
-
-    System.out.println("Testing tape");
 
     ScotchTape tapesArray[] = new ScotchTape[3];
 
@@ -31,6 +30,14 @@ public class TestTape {
     tapesArray[2].colour = "blue";
     tapesArray[2].weight = 2;
     tapesArray[2].length = 19;
+
+    printTapeArray(tapesArray);
+
+    stickTape(tapesArray[0], 0.5);
+    stickTape(tapesArray[1], 0.3);
+    stickTape(tapesArray[2], 0.9);
+
+    System.out.println();
 
     printTapeArray(tapesArray);
 
