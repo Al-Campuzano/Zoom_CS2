@@ -20,8 +20,8 @@ void printSet (const T &set, short int numOfTiles) {
   };
 
   string tiles[7] = {
-    lines[0] + lines[0] + lines[0],
-    lines[0] + lines[2] + lines[0],
+    lines[0] + lines[0] + lines[0], // blank
+    lines[0] + lines[2] + lines[0], // 1
     lines[1] + lines[0] + lines[3],
     lines[1] + lines[2] + lines[3],
     lines[4] + lines[0] + lines[4],
@@ -64,7 +64,7 @@ void sortBySideBDesc (T &set, short int numOfTiles) {
 }
 
 int main() {
-  const short int MAX_PIPS = 6; // size of highest domino piece
+  const short int MAX_PIPS = 4; // size of highest domino piece
   const short int TILES_NUM = (MAX_PIPS + 1) * (MAX_PIPS + 2)/2; // a double six set of dominoes has 28 tiles
   domino set[TILES_NUM];
 
