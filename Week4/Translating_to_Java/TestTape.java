@@ -1,5 +1,6 @@
 public class TestTape {
 
+  // Don't need to pass in array length
   public static void printTapeArray(ScotchTape[] tapeArray) {
     for (int i=0; i < tapeArray.length; i++) {
       System.out.println(tapeArray[i].colour + " (" + tapeArray[i].length + " cm, "
@@ -7,6 +8,8 @@ public class TestTape {
     }
   }
 
+  // had to change from float to double because was getting a compile error
+  // about possible lossy conversion from double to float
   public static void stickTape(ScotchTape tape, double percentToUse) {
     tape.weight -= (int)(tape.weight * percentToUse);
     tape.length -= (int)(tape.length * percentToUse);
