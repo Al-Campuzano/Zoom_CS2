@@ -20,15 +20,12 @@ class flower {
     cout << color << " (" << height << " cm, "
          << percentWater << "% water)" << endl;
   }
+
+  void growFlower() {
+    height += 2;
+    percentWater -= 0.05f;
+  }
 };
-
-
-
-void growFlower(flower &f)
-{
-  f.height += 2;
-  f.percentWater -= 0.05f;
-}
 
 void waterFlower(flower &f)
 {
@@ -38,9 +35,6 @@ void waterFlower(flower &f)
 int main()
 {
   flower f("purple", 10, 0.5f);
-  // f.color = "purple";
-  // f.height = 10;
-  // f.percentWater = 0.5f;
 
   f.printFlower();
 
@@ -48,7 +42,7 @@ int main()
 
   f.printFlower();
 
-  growFlower(f);
+  f.growFlower();
 
   f.printFlower();
 
