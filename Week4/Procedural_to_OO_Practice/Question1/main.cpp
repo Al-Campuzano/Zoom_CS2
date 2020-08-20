@@ -30,8 +30,7 @@ class flower {
   }
 };
 
-int main()
-{
+int main() {
   flower f("purple", 10, 0.5f);
 
   f.printFlower();
