@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 class flower {
   public:
     string color;
@@ -25,12 +24,11 @@ class flower {
     height += 2;
     percentWater -= 0.05f;
   }
-};
 
-void waterFlower(flower &f)
-{
-  f.percentWater += 0.1f;
-}
+  void waterFlower() {
+    percentWater += 0.1f;
+  }
+};
 
 int main()
 {
@@ -38,7 +36,7 @@ int main()
 
   f.printFlower();
 
-  waterFlower(f);
+  f.waterFlower();
 
   f.printFlower();
 
