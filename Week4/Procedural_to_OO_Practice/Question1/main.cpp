@@ -9,18 +9,20 @@ class flower {
     string color;
     int height;
     float percentWater;
+
   flower(string c, int h, float p) {
     color = c;
     height = h;
     percentWater = p;
   }
+
+  void printFlower() {
+    cout << color << " (" << height << " cm, "
+         << percentWater << "% water)" << endl;
+  }
 };
 
-void printFlower(flower &f)
-{
-  cout << f.color << " (" << f.height << " cm, "
-       << f.percentWater << "% water)" << endl;
-}
+
 
 void growFlower(flower &f)
 {
@@ -40,15 +42,15 @@ int main()
   // f.height = 10;
   // f.percentWater = 0.5f;
 
-  printFlower(f);
+  f.printFlower();
 
   waterFlower(f);
 
-  printFlower(f);
+  f.printFlower();
 
   growFlower(f);
 
-  printFlower(f);
+  f.printFlower();
 
   return 0;
 }
