@@ -16,7 +16,7 @@ public class Flower {
 
   public void growFlower() {
     height += 2;
-    percentWater -= 0.5;
+    percentWater -= 0.05;
   }
 
   public void waterFlower() {
