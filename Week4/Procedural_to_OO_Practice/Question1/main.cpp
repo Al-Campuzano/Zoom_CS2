@@ -4,12 +4,16 @@
 using namespace std;
 
 
-class flower
-{
-public:
-  string color;
-  int height;
-  float percentWater;
+class flower {
+  public:
+    string color;
+    int height;
+    float percentWater;
+  flower(string c, int h, float p) {
+    color = c;
+    height = h;
+    percentWater = p;
+  }
 };
 
 void printFlower(flower &f)
@@ -31,10 +35,10 @@ void waterFlower(flower &f)
 
 int main()
 {
-  flower f;
-  f.color = "purple";
-  f.height = 10;
-  f.percentWater = 0.5f;
+  flower f("purple", 10, 0.5f);
+  // f.color = "purple";
+  // f.height = 10;
+  // f.percentWater = 0.5f;
 
   printFlower(f);
 
