@@ -24,7 +24,7 @@ public class LegoHat {
   // but not in summer.
   // Sun visors are stylish in summer, somewhat in fall and spring, not in winter.
   // Bowler hats are most stylish in fall and spring, less so in summer and winter.
-  // seasons should use 'fall' not 'autumn'
+  // seasons could use 'fall' or 'autumn'
   public int computeStyle(String season) {
     switch(style) {
       case "sombrero":
@@ -54,6 +54,7 @@ public class LegoHat {
       case "bowler":
         switch(season) {
           case "fall":
+          case "autumn":
           case "spring":
             return 7;
           default:
