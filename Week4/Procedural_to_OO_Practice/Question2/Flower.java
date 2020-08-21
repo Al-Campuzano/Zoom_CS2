@@ -3,10 +3,10 @@ public class Flower {
   int height;
   float percentWater;
 
-  public Flower (String c, int h, float p) {
-    color = c;
-    height = h;
-    percentWater = p;
+  public Flower (String newColor, int newHeight, float newPercent) {
+    color = newColor;
+    height = newHeight;
+    percentWater = newPercent;
   }
 
   public void printFlower() {

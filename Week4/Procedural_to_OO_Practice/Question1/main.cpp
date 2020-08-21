@@ -9,10 +9,10 @@ class flower {
     int height;
     float percentWater;
 
-  flower(string c, int h, float p) {
-    color = c;
-    height = h;
-    percentWater = p;
+  flower(string newColor, int newHeight, float newPercent) {
+    color = newColor;
+    height = newHeight;
+    percentWater = newPercent;
   }
 
   void printFlower() {
