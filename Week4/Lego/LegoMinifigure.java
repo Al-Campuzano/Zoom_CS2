@@ -13,15 +13,19 @@ public class LegoMinifigure {
 
   public String toString() {
     boolean wearingHat = false;
+    String leftString = "";
+    String rightString = "";
     if (hat != null) {
       wearingHat = true;
     }
     int itemCount = 0;
     if (leftHand != null) {
       itemCount++;
+      leftString = leftHand.toString() + " in the left hand";
     }
     if (rightHand != null) {
       itemCount++;
+      rightString = rightHand.toString() + " in the right hand";
     }
 
     String result = "A Lego minifigure named " + name;
@@ -36,14 +40,14 @@ public class LegoMinifigure {
         result += " and is ";
       }
       result += "holding ";
-      if (leftHand != null) {
-        result += leftHand.toString() + " in the left hand";
+      if (leftString != "") {
+        result += leftString;
       }
       if (itemCount == 2) {
         result += " and ";
       }
-      if (rightHand != null) {
-        result += rightHand.toString() + " in the right hand";
+      if (rightString != "") {
+        result += rightString;
       }
     }
     return result += ".\n";
