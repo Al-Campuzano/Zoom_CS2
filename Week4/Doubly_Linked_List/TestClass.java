@@ -18,13 +18,11 @@ public class TestClass
         String r5 = new String("https://gigaom.com/2015/02/10/samsung-" +
                                    "tvs-start-inserting-ads-into-your-movies/");
 
-
-
         ////
         // We can manually create a linked list
         // with two nodes like this:
 
-        ListNode listHead = new ListNode(r1, new ListNode(r2), null);
+        ListNode listHead = new ListNode(r1);
 
         ListNode.printNumNodes(); // <- best way to call a static method
         listHead.printNumNodes(); // <- prints the same thing, but should avoid
@@ -39,30 +37,28 @@ public class TestClass
         listHead = listHead.addNodeToBeginning(new ListNode(r3));
 
         listHead.addNodeToEnd(new ListNode(r4));
-
         listHead.addNodeAfterNode(new ListNode(r5), listHead);
-
         ListNode.printNumNodes();
         listHead.printListFromHere();
-
-
-        ////
-        // Let's test removing nodes from the beginning, middle, and end:
-
-        listHead = listHead.removeFirstNode();
-        listHead.printListFromHere();
-
-        listHead = listHead.removeLastNode();
-        listHead.printListFromHere();
-
-        listHead = listHead.removeNode(listHead.next);
-        listHead.printListFromHere();
-
-        listHead = listHead.removeNode(listHead);
-        listHead.printListFromHere();
-
-        listHead = listHead.removeNode(listHead);
-        System.out.println(listHead); // <- should be null!
+        //
+        //
+        // ////
+        // // Let's test removing nodes from the beginning, middle, and end:
+        //
+        // listHead = listHead.removeFirstNode();
+        // listHead.printListFromHere();
+        //
+        // listHead = listHead.removeLastNode();
+        // listHead.printListFromHere();
+        //
+        // listHead = listHead.removeNode(listHead.next);
+        // listHead.printListFromHere();
+        //
+        // listHead = listHead.removeNode(listHead);
+        // listHead.printListFromHere();
+        //
+        // listHead = listHead.removeNode(listHead);
+        // System.out.println(listHead); // <- should be null!
     }
 
 

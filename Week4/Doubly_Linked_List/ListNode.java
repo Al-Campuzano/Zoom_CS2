@@ -32,7 +32,9 @@ public class ListNode {
         System.out.println("----------\nStart List\n----------");
         ListNode currNode = this;
         while (currNode != null) {
+            System.out.println(currNode.prev);
             System.out.println("\t" + currNode.data);
+            System.out.println(currNode.next);
             currNode = currNode.next;
         }
         System.out.println("----------\nEnd List\n----------");
@@ -44,6 +46,7 @@ public class ListNode {
     // "this" node is the beginning, and return the new
     // start of the list
     public ListNode addNodeToBeginning(ListNode newNode) {
+        this.prev = newNode;
         newNode.next = this;
         return newNode;
     }
@@ -55,7 +58,7 @@ public class ListNode {
         while (currNode.next != null) {
             currNode = currNode.next;
         }
-
+        newNode.prev = currNode;
         currNode.next = newNode;
     }
 
@@ -79,6 +82,8 @@ public class ListNode {
         // or the node we want to add the new one after
         if (currNode != null) {
             newNode.next = currNode.next;
+            currNode.next.prev = newNode;
+            newNode.prev = currNode;
             currNode.next = newNode;
         }
     }
