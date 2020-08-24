@@ -96,6 +96,7 @@ public class ListNode {
         // making the second node in the list the head
         // (if there isn't one, that's ok, head will
         // just become null)
+        next.prev = null;
         return next;
     }
 
@@ -103,6 +104,8 @@ public class ListNode {
     // Remove the last node from the list, and return
     // the head in case it changes because the list
     // is now empty
+
+    // This one does not need to be modified for a doubly-linked list
     public ListNode removeLastNode() {
         // If there's only one item in the list,
         // the new list should be empty (i.e. head
@@ -138,7 +141,10 @@ public class ListNode {
         // if so, link it out by returning a new head
         // (which can be null)
         if (data.equals(toRemove.data)) {
-            return next;
+          if(next != null){
+            next.prev = null;
+          }
+          return next;
         }
         // Otherwise, we can search the list for the
         // node to remove and link it out
@@ -156,7 +162,10 @@ public class ListNode {
             // If currNode's next is null, then we never found the
             // node to remove
             if (currNode.next != null) {
-                currNode.next = currNode.next.next;
+              if (currNode.next.next != null) {
+                currNode.next.next.prev = currNode;
+              }
+              currNode.next = currNode.next.next;
             }
 
             // If we got this far, the head hasn't changed

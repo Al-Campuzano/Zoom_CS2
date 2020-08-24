@@ -40,22 +40,24 @@ public class TestClass
         listHead.addNodeAfterNode(new ListNode(r5), listHead);
         ListNode.printNumNodes();
         listHead.printListFromHere();
-        //
-        //
+
         // ////
         // // Let's test removing nodes from the beginning, middle, and end:
         //
-        // listHead = listHead.removeFirstNode();
-        // listHead.printListFromHere();
+        listHead = listHead.removeFirstNode();
+        listHead.printListFromHere();
+
+        listHead = listHead.removeLastNode();
+        listHead.printListFromHere();
+
+        listHead = listHead.removeNode(listHead.next);
+        listHead.printListFromHere();
         //
-        // listHead = listHead.removeLastNode();
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeNode(listHead.next);
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeNode(listHead);
-        // listHead.printListFromHere();
+        listHead = listHead.removeNode(listHead);
+        //listHead.printListFromHere();
+
+        // ListNode test = null;
+        // test.printListFromHere();
         //
         // listHead = listHead.removeNode(listHead);
         // System.out.println(listHead); // <- should be null!
