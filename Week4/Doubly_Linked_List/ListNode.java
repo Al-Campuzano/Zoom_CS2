@@ -1,8 +1,3 @@
-//  Ensure that all of the list’s methods for addition and removal of nodes update
-//  the prev reference appropriately. These methods include adding and removing a
-//  node from the beginning, the end, and after some other node. Do not change the
-//  names of the methods from the original code.
-
 public class ListNode {
     public String data;
     public ListNode next;
