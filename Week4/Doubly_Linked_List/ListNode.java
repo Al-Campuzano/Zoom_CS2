@@ -27,9 +27,9 @@ public class ListNode {
         System.out.println("----------\nStart List\n----------");
         ListNode currNode = this;
         while (currNode != null) {
-            System.out.println(currNode.prev);
+            System.out.println("\tPrevious: " + currNode.prev);
             System.out.println("\t" + currNode.data);
-            System.out.println(currNode.next);
+            System.out.println("\tNext: " + currNode.next + "\n");
             currNode = currNode.next;
         }
         System.out.println("----------\nEnd List\n----------");
@@ -195,18 +195,19 @@ public class ListNode {
         result += " ";
         currNode = currNode.next;
       }
-
       return result;
     }
 
     public ListNode reverse() {
+      // we keep track of the previous node looked at so we can return
+      // the new head of the list
       ListNode prevNode = null;
       ListNode currNode = this;
       while (currNode != null) {
         // swap prev and next nodes
-        ListNode temp = currNode.prev;
+        prevNode = currNode.prev;
         currNode.prev = currNode.next;
-        currNode.next = temp;
+        currNode.next = prevNode;
         // because they've been swapped the next node to look at
         // is now in the prev pointer
         prevNode = currNode;

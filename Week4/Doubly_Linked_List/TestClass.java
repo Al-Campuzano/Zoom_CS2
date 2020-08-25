@@ -30,6 +30,7 @@ public class TestClass
 
         listHead.printListFromHere();
 
+        System.out.println("\t--- TESTING ADDING NODES ---");
 
         ////
         // Now we can add nodes to the beginning, end, and middle:
@@ -41,14 +42,17 @@ public class TestClass
         ListNode.printNumNodes();
         listHead.printListFromHere();
 
+        System.out.println("\t--- TESTING CONCATENATE METHOD ---");
         System.out.println(listHead.concatenate());
 
+        System.out.println("\t--- TESTING REVERSE METHOD ---");
         listHead = listHead.reverse();
         listHead.printListFromHere();
 
         // ////
         // // Let's test removing nodes from the beginning, middle, and end:
         //
+        System.out.println("\t--- TESTING REMOVING NODES ---");
         listHead = listHead.removeFirstNode();
         listHead.printListFromHere();
 
@@ -62,8 +66,9 @@ public class TestClass
         listHead.printListFromHere();
 
 
-        // listHead = listHead.removeNode(listHead);
-        // System.out.println(listHead); // <- should be null!
+        listHead = listHead.removeNode(listHead);
+        System.out.println(listHead); // <- should be null!
+
     }
 
 
