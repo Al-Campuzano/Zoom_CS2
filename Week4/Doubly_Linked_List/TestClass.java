@@ -33,12 +33,17 @@ public class TestClass
 
         ////
         // Now we can add nodes to the beginning, end, and middle:
-
+        listHead = listHead.addNodeToBeginning(new ListNode(r2));
         listHead = listHead.addNodeToBeginning(new ListNode(r3));
 
         listHead.addNodeToEnd(new ListNode(r4));
         listHead.addNodeAfterNode(new ListNode(r5), listHead);
         ListNode.printNumNodes();
+        listHead.printListFromHere();
+
+        System.out.println(listHead.concatenate());
+
+        listHead = listHead.reverse();
         listHead.printListFromHere();
 
         // ////
@@ -52,13 +57,11 @@ public class TestClass
 
         listHead = listHead.removeNode(listHead.next);
         listHead.printListFromHere();
-        //
-        listHead = listHead.removeNode(listHead);
-        //listHead.printListFromHere();
 
-        // ListNode test = null;
-        // test.printListFromHere();
-        //
+        listHead = listHead.removeNode(listHead);
+        listHead.printListFromHere();
+
+
         // listHead = listHead.removeNode(listHead);
         // System.out.println(listHead); // <- should be null!
     }

@@ -186,4 +186,32 @@ public class ListNode {
 
         return length;
     }
+
+    public String concatenate() {
+      String result = "";
+      ListNode currNode = this;
+      while (currNode != null) {
+        result += currNode.data;
+        result += " ";
+        currNode = currNode.next;
+      }
+
+      return result;
+    }
+
+    public ListNode reverse() {
+      ListNode prevNode = null;
+      ListNode currNode = this;
+      while (currNode != null) {
+        // swap prev and next nodes
+        ListNode temp = currNode.prev;
+        currNode.prev = currNode.next;
+        currNode.next = temp;
+        // because they've been swapped the next node to look at
+        // is now in the prev pointer
+        prevNode = currNode;
+        currNode = currNode.prev;
+      }
+      return prevNode;
+    }
 }
