@@ -45,12 +45,11 @@ public class Shelf {
       // empty the last spot on the shelf;
       books[numBooks - 1] = null;
       numBooks--; // update the tracker of how many books are on the shelf
-    } 
+    }
     return b;
   }
 
   public void printBooks() {
-    //System.out.println("Printing books");
     for (int i = 0; i < numBooks; i++) {
       if(books[i] != null){
         System.out.println(books[i]);

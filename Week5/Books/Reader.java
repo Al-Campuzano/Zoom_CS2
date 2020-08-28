@@ -9,6 +9,7 @@ public class Reader {
     return this.isReading() ? currentlyReading.toString() : "Not reading anything at the moment";
   }
 
+  // helper method to indicate if Reader already has a book "checked out"
   private boolean isReading() {
     return currentlyReading != null;
   }

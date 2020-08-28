@@ -4,7 +4,6 @@
 
 public class Bookcase {
   private static final int MAX_SHELVES = 5;
-  //private int numBooks;
   private Shelf[] shelves;
 
   public Bookcase() {
