@@ -3,6 +3,8 @@
 // If removed, a reference to the book should be provided to whoever was asking to remove it.
 
 public class Bookcase {
-
+  private static final int MAX_SHELFS = 5;
+  private int numBooks;
+  private Shelf[] shelfs;
 
 }

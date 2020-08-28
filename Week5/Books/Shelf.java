@@ -10,11 +10,11 @@ public class Shelf {
   }
 
   public boolean isFull() {
-    return numBooks < SHELF_CAPACITY;
+    return numBooks >= SHELF_CAPACITY;
   }
 
   public void addBook(Book b) {
-    if (numBooks < SHELF_CAPACITY) {
+    if (!this.isFull()) {
       books[numBooks++] = b;
     }
   }
@@ -34,8 +34,8 @@ public class Shelf {
   }
 
 // helper function to find if a book is on shelf and where
-// returns -1 if not found 
-  private int indexOfBookByTitle(String t) {
+// returns -1 if not found
+  public int indexOfBookByTitle(String t) {
     int index = -1;
     for (int i = 0; i < numBooks; i++) {
       if (books[i].getTitle() == t) {
