@@ -11,7 +11,11 @@ public class Book {
     isbn = newIsbn;
   }
 
+  public String getTitle() { return title; }
+
   public String toString() {
     return title + " by " + author;
   }
+
+
 }
