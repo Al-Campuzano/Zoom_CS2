@@ -19,6 +19,18 @@ public class Shelf {
     }
   }
 
+  // helper function to find if a book is on shelf and where
+  // returns -1 if not found
+  private int indexOfBookByTitle(String t) {
+    int index = -1;
+    for (int i = 0; i < numBooks; i++) {
+      if (books[i].getTitle() == t) {
+        index = i;
+      }
+    }
+    return index;
+  }
+
   public Book removeBook(String bookTitle) {
     Book b = null;
     int index = this.indexOfBookByTitle(bookTitle);
@@ -33,16 +45,11 @@ public class Shelf {
     return b;
   }
 
-// helper function to find if a book is on shelf and where
-// returns -1 if not found
-  public int indexOfBookByTitle(String t) {
-    int index = -1;
+  public void printBooks() {
     for (int i = 0; i < numBooks; i++) {
-      if (books[i].getTitle() == t) {
-        index = i;
+      if(books[i] != null){
+        System.out.println(books[i]);
       }
     }
-    return index;
   }
-
 }
