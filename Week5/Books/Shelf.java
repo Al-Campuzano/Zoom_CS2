@@ -1,6 +1,6 @@
 public class Shelf {
 
-  private static final int SHELF_CAPACITY = 10;
+  private static final int SHELF_CAPACITY = 3;
   private int numBooks;
   private Book[] books;
 

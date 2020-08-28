@@ -39,6 +39,7 @@ public class Bookcase {
 
   public void listBooks() {
     for (int i = 0; i < MAX_SHELVES; i++) {
+      System.out.println("\nOn shelf number "+ (i+1) + ":");
       shelves[i].printBooks();
     }
   }
