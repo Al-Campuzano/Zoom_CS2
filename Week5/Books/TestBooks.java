@@ -12,28 +12,29 @@ public class TestBooks {
     bcase.addBook(b2);
     bcase.addBook(b3);
     bcase.addBook(b4);
-    bcase.addBook(test);
-    bcase.addBook(b2);
-    bcase.addBook(b3);
-    bcase.addBook(b4);
-    bcase.addBook(test);
-    bcase.addBook(b2);
-    bcase.addBook(b3);
-    bcase.addBook(b4);
-    bcase.addBook(test);
-    bcase.addBook(b2);
-    bcase.addBook(b3);
-    bcase.addBook(b4);
-    bcase.addBook(test);
-    bcase.addBook(b2);
-    bcase.addBook(b3);
-    bcase.addBook(b4);
+    bcase.addBook(new Book("2001", "Arthur C Clarke", "9990999099900"));
+    bcase.addBook(new Book("Ubik", "Phillip K Dick", "8890999099900"));
+    bcase.addBook(new Book("Wake", "Robert J Sawyer", "9123999099900"));
+    bcase.addBook(new Book("Watch", "Robert J Sawyer", "99909990992345"));
+    bcase.addBook(new Book("Wonder", "Robert J Sawyer", "999298374099900"));
+    bcase.addBook(new Book("Nova", "Samuel Delaney", "915690999099900"));
+    bcase.addBook(new Book("Starship Troopers", "Robert Heinlein", "1456799099900"));
+    bcase.addBook(new Book("Unknown", "Anon", "11111111111111111"));
+    bcase.addBook(new Book("The Yidish Policemen Union", "Michael Chabon", "1567899099900"));
+    bcase.addBook(new Book("A New Hope", "George Lucas", "3240999099900"));
+    bcase.addBook(new Book("2123", "Kim Stanley Robinson", "8970999012900"));
+    bcase.addBook(new Book("Foundation", "Isaac Asimov", "95909990994567"));
+    bcase.addBook(new Book("Brave New World", "Aldous Huxley", "99909990999320"));
+    bcase.addBook(new Book("1984", "George Orwell", "79909990999320"));
+    bcase.addBook(new Book("Gateway", "Frederik Pohl", "69909990999320"));
+    bcase.addBook(new Book("Last Year", "Robert Charles Wilson", "49909990999320"));
     System.out.println("Books in bookcase:");
     bcase.listBooks();
 
     Reader bookworm = new Reader();
 
-    bookworm.takeOutBook(bcase, "Robots and Empire");
+    bookworm.takeOutBook(bcase, "Ender's Game");
+    bookworm.takeOutBook(bcase, "2001");
     bookworm.takeOutBook(bcase, "Ender's Game");
     System.out.println("\nAfter taking out a book:");
     bcase.listBooks();
@@ -42,27 +43,7 @@ public class TestBooks {
     System.out.println("\nAfter putting it back:");
     bcase.listBooks();
     System.out.println("\nCurrently reading: " + bookworm.getCurrentBook());
-    // bcase.removeBook("Robots and Empire");
-    // System.out.println("--------After remove------");
-//    System.out.println(bcase.removeBook("Dune"));
-    // bcase.listBooks();
 
-
-    // Shelf s = new Shelf();
-    //
-    // System.out.println(s.removeBook("Dune"));
-    // s.addBook(b2);
-    // s.addBook(b3);
-    // s.addBook(test);
-    // s.addBook(b4);
-    //
-    // System.out.println(s.indexOfBookByTitle("Dune"));
-    // System.out.println(s.removeBook("The Fountainhead"));
-    // System.out.println(s.indexOfBookByTitle("Dune"));
-    //
-    // s.addBook(b2);
-    // System.out.println(s.indexOfBookByTitle("The Fountainhead"));
-    //System.out.println(test);
   }
 
 }

@@ -18,7 +18,7 @@ public class Reader {
       currentlyReading = bcase.removeBook(title);
       return true;
     }
-    System.out.println("\n" + title + " not found");
+    System.out.println("Already reading " + currentlyReading.toString());
     return false;
   }
 

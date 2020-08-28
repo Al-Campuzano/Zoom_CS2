@@ -1,6 +1,6 @@
 public class Shelf {
 
-  private static final int SHELF_CAPACITY = 3;
+  private static final int SHELF_CAPACITY = 10;
   private int numBooks;
   private Book[] books;
 
@@ -15,7 +15,10 @@ public class Shelf {
 
   public void addBook(Book b) {
     if (!this.isFull()) {
+      System.out.println("PUT " + b + " on the shelf.");
       books[numBooks++] = b;
+    } else {
+      System.out.println("No room on the shelf.");
     }
   }
 
@@ -36,16 +39,18 @@ public class Shelf {
     int index = this.indexOfBookByTitle(bookTitle);
     if (index != -1) {
       b = books[index];
+      System.out.println("TOOK out " + b);
       // put the last book on the shelf in the place where the book we're taking out was
       books[index] = books[numBooks - 1];
       // empty the last spot on the shelf;
       books[numBooks - 1] = null;
       numBooks--; // update the tracker of how many books are on the shelf
-    }
+    } 
     return b;
   }
 
   public void printBooks() {
+    //System.out.println("Printing books");
     for (int i = 0; i < numBooks; i++) {
       if(books[i] != null){
         System.out.println(books[i]);

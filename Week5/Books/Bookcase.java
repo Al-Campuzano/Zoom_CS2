@@ -21,6 +21,7 @@ public class Bookcase {
         return true;
       }
     }
+    System.out.println("No room on the shelf.");
     return false;
   }
 
@@ -33,6 +34,9 @@ public class Bookcase {
     while (i < MAX_SHELVES && b == null) {
       b = shelves[i].removeBook(title);
       i++;
+    }
+    if (b == null) { // we didn't find the book on any shelf
+      System.out.println(title + " not found.");
     }
     return b;
   }
