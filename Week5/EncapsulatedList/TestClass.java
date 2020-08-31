@@ -24,18 +24,14 @@ public class TestClass
 
         ListNode listHead = new ListNode(r1);
         list.addURLToBeginning(listHead);
-        // list.printListFrom();
         list.addURLToBeginning(new ListNode(r2));
-        // list.printListFrom();
         list.addURLToEnd(new ListNode(r3));
-        // list.printListFrom();
         list.addURLToBeginning(new ListNode(r4));
-        // list.printListFrom();
         list.addNodeAfterNode(new ListNode(r5), listHead);
         list.addURLToBeginning("TEST URL");
         list.addURLToEnd("END URL");
+        ListNode.printNumNodes();
         list.printListFrom();
-        //list.addURLToBeginning(new ListNode(r5));
         System.out.println("Length: " + list.getLength());
 
         list.removeFirstURL();
@@ -48,45 +44,6 @@ public class TestClass
         list.printListFrom();
         System.out.println("Length: " + list.getLength());
 
-        // ListNode.printNumNodes(); // <- best way to call a static method
-        // listHead.printNumNodes(); // <- prints the same thing, but should avoid
-        // listHead.next.printNumNodes(); // <- prints the same thing, but should avoid
-
-
-
-
-        ////
-        // Now we can add nodes to the beginning, end, and middle:
-
-        //listHead = listHead.addNodeToBeginning(new ListNode(r3));
-
-        // listHead.addNodeToEnd(new ListNode(r4));
-        //
-
-        //
-        // ListNode.printNumNodes();
-        // listHead.printListFromHere();
-
-
-        ////
-        // Let's test removing nodes from the beginning, middle, and end:
-
-        // listHead = listHead.removeFirstNode();
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeLastNode();
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeNode(listHead.next);
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeNode(listHead);
-        // listHead.printListFromHere();
-        //
-        // listHead = listHead.removeNode(listHead);
-        // System.out.println(listHead); // <- should be null!
     }
-
-
 
 }

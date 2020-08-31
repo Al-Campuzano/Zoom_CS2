@@ -27,6 +27,7 @@ public class LinkedList {
 
   // Add a node to the beginning of the list, and return the new
   // start of the list
+  // The method is overloaded so either a string or a node object can be passed in.
   public ListNode addURLToBeginning(String newURL) {
     return addURLToBeginning(new ListNode(new ReadThis(newURL)));
   }
@@ -147,6 +148,7 @@ public class LinkedList {
     }
   }
 
+  // clear the list by making the listHead null
   public void clearList() {
     listHead = null;
   }

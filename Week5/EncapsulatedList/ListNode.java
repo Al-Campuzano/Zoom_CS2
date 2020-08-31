@@ -2,7 +2,7 @@ public class ListNode {
   private ReadThis data;
   private ListNode next;
 
-  public static int totalNodes = 0;
+  private static int totalNodes = 0;
 
   public ListNode(ReadThis newData) {
     this(newData, null);
