@@ -65,4 +65,78 @@ public class LinkedList {
     }
   }
 
+  // Remove the first node in the list, and return
+  // the new head
+  public ListNode removeFirstURL() {
+    // We just need to cut out the head node,
+    // making the second node in the list the head
+    // (if there isn't one, that's ok, head will
+    // just become null)
+    listHead = listHead.next;
+    return listHead;
+  }
+
+  // Remove the last node from the list, and return
+  // the head in case it changes because the list
+  // is now empty
+  public ListNode removeLastURL() {
+    // If there's only one item in the list,
+    // the new list should be empty (i.e. head
+    // is null)
+    if (listHead.next == null) {
+      listHead = null;
+      return listHead;
+    } else { // Otherwise, find the last node to remove
+      // First we have to actually find the end of the list,
+      // but we also have to hang onto the node right before the
+      // last one so we can update its next reference
+      ListNode prevNode = null;
+      ListNode currNode = listHead;
+      while (currNode.next != null) {
+        prevNode = currNode;
+        currNode = currNode.next;
+      }
+
+      // currNode is the last one in the list; now we can cut it out
+      // using the previous node
+      prevNode.next = null;
+
+      // The head isn't changing in this case, so
+      // just return this
+      return listHead;
+    }
+  }
+
+  // Remove the given node from the list, and return
+  // the head in case it changes
+  public ListNode removeNode(ListNode toRemove) {
+    // Check if the head is the one to remove;
+    // if so, link it out by returning a new head
+    // (which can be null)
+    if (listHead.data.equals(toRemove.data)) {
+      listHead = listHead.next;
+      return listHead;
+    } else {
+      // Otherwise, we can search the list for the
+      // node to remove and link it out
+      ListNode currNode = listHead;
+
+      // Stop when the next node's data equals the data
+      // we want to remove
+      while (currNode.next != null &&
+             !currNode.next.data.equals(toRemove.data)) {
+        currNode = currNode.next;
+      }
+
+      // If currNode's next is null, then we never found the
+      // node to remove
+      if (currNode.next != null) {
+        currNode.next = currNode.next.next;
+      }
+
+      // If we got this far, the head hasn't changed
+      return listHead;
+    }
+  }
+
 }

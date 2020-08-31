@@ -24,18 +24,28 @@ public class TestClass
 
         ListNode listHead = new ListNode(r1);
         list.addURLToBeginning(listHead);
+        // list.printListFrom();
         list.addURLToBeginning(new ListNode(r2));
+        // list.printListFrom();
         list.addURLToEnd(new ListNode(r3));
+        // list.printListFrom();
         list.addURLToBeginning(new ListNode(r4));
+        // list.printListFrom();
         list.addNodeAfterNode(new ListNode(r5), listHead);
+        list.printListFrom();
         //list.addURLToBeginning(new ListNode(r5));
 
-
-        ListNode.printNumNodes(); // <- best way to call a static method
-        listHead.printNumNodes(); // <- prints the same thing, but should avoid
-        listHead.next.printNumNodes(); // <- prints the same thing, but should avoid
-
+        list.removeFirstURL();
+        list.removeLastURL();
+        list.removeNode(listHead);
         list.printListFrom();
+
+
+        // ListNode.printNumNodes(); // <- best way to call a static method
+        // listHead.printNumNodes(); // <- prints the same thing, but should avoid
+        // listHead.next.printNumNodes(); // <- prints the same thing, but should avoid
+
+
 
 
         ////
