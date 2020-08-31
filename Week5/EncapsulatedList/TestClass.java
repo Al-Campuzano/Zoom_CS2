@@ -32,14 +32,21 @@ public class TestClass
         list.addURLToBeginning(new ListNode(r4));
         // list.printListFrom();
         list.addNodeAfterNode(new ListNode(r5), listHead);
+        list.addURLToBeginning("TEST URL");
+        list.addURLToEnd("END URL");
         list.printListFrom();
         //list.addURLToBeginning(new ListNode(r5));
+        System.out.println("Length: " + list.getLength());
 
         list.removeFirstURL();
         list.removeLastURL();
         list.removeNode(listHead);
         list.printListFrom();
+        System.out.println("Length: " + list.getLength());
 
+        list.clearList();
+        list.printListFrom();
+        System.out.println("Length: " + list.getLength());
 
         // ListNode.printNumNodes(); // <- best way to call a static method
         // listHead.printNumNodes(); // <- prints the same thing, but should avoid
