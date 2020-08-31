@@ -43,4 +43,26 @@ public class LinkedList {
     currNode.next = newNode;
   }
 
+  // Add a node after a given node, starting the search at the listHead
+  public void addNodeAfterNode(ListNode newNode, ListNode addAfter) {
+    ListNode currNode = listHead;
+
+    // Use short-circuiting: if currNode ends up being
+    // null, the first part of the and expression will be
+    // false and the second part will never get evaluated
+    // (this avoids a null pointer exception)
+    while (currNode != null &&
+           !currNode.data.equals(addAfter.data)) {
+      currNode = currNode.next;
+    }
+
+    // currNode will either be null if we got to the
+    // end of the list without finding the node,
+    // or the node we want to add the new one after
+    if (currNode != null) {
+      newNode.next = currNode.next;
+      currNode.next = newNode;
+    }
+  }
+
 }

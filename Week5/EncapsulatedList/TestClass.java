@@ -27,7 +27,8 @@ public class TestClass
         list.addURLToBeginning(new ListNode(r2));
         list.addURLToEnd(new ListNode(r3));
         list.addURLToBeginning(new ListNode(r4));
-        list.addURLToBeginning(new ListNode(r5));
+        list.addNodeAfterNode(new ListNode(r5), listHead);
+        //list.addURLToBeginning(new ListNode(r5));
 
 
         ListNode.printNumNodes(); // <- best way to call a static method
@@ -44,7 +45,7 @@ public class TestClass
 
         // listHead.addNodeToEnd(new ListNode(r4));
         //
-        // listHead.addNodeAfterNode(new ListNode(r5), listHead);
+
         //
         // ListNode.printNumNodes();
         // listHead.printListFromHere();
