@@ -25,10 +25,10 @@ public class Journal {
     Journal jour1 = new Journal("First Journal");
     Journal jour2 = new Journal("Second Journal");
     // need 4 Issues
-    Issue iss1 = new Issue(1910, 1, 2, jour1);
-    Issue iss2 = new Issue(1920, 2, 4, jour1);
-    Issue iss3 = new Issue(1930, 4, 8, jour2);
-    Issue iss4 = new Issue(1940, 6, 12, jour2);
+    Issue iss1 = new Issue(1910, 3, 2, jour1);
+    Issue iss2 = new Issue(1920, 7, 4, jour1);
+    Issue iss3 = new Issue(1930, 8, 8, jour2);
+    Issue iss4 = new Issue(1940, 10, 3, jour2);
     // need 8 Articles
     Article art1 = new Article("First Article", "First Author", iss1);
     Article art2 = new Article("Second Article", "Second Author", iss1);
@@ -38,7 +38,10 @@ public class Journal {
     Article art6 = new Article("Sixth Article", "Sixth Author", iss3);
     Article art7 = new Article("Seventh Article", "Seventh Author", iss4);
     Article art8 = new Article("Eighth Article", "Eighth Author", iss4);
+// REMOVE THESE AFTER
 System.out.println(art1);
+System.out.println(iss1);
+// REMOVE THOSE AFTER
     ArrayList<Journal> sampleJournals = new ArrayList<Journal>(5);
     sampleJournals.add(jour1);
     sampleJournals.add(jour2);

@@ -28,4 +28,8 @@ public class Issue {
   public int getNumber() { return number; }
   public Journal getJournal() { return journal; }
 
+  public String toString() {
+    return journal.getTitle() + ", Volume " + volume + ", Issue " + number;
+  }
+
 }
