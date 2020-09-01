@@ -23,4 +23,9 @@ public class Issue {
     articles.add(newArticle);
   }
 
+  public int getYear() { return year; }
+  public int getVolume() { return volume; }
+  public int getNumber() { return number; }
+  public Journal getJournal() { return journal; }
+
 }

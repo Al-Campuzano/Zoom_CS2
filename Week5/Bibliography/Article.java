@@ -18,4 +18,11 @@ public class Article {
 
   public String getTitle() { return title; }
   public String getAuthor() { return author; }
+
+  public String toString() {
+    return author + ". " + title + ". " + issue.getJournal().getTitle()
+           + ", " + issue.getVolume() + "(" + issue.getNumber() + "), "
+           + issue.getYear() + ".";  
+  }
+
 }

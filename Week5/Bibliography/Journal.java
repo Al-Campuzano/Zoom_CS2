@@ -11,6 +11,8 @@ public class Journal {
     issues = new ArrayList<Issue>();
   }
 
+  public String getTitle() { return title; }
+
   public void addIssue(Issue newIssue) {
     issues.add(newIssue);
   }
@@ -36,8 +38,8 @@ public class Journal {
     Article art6 = new Article("Sixth Article", "Sixth Author", iss3);
     Article art7 = new Article("Seventh Article", "Seventh Author", iss4);
     Article art8 = new Article("Eighth Article", "Eighth Author", iss4);
-
-    ArrayList<Journal> sampleJournals = new ArrayList<Journal>(2);
+System.out.println(art1);
+    ArrayList<Journal> sampleJournals = new ArrayList<Journal>(5);
     sampleJournals.add(jour1);
     sampleJournals.add(jour2);
 
