@@ -2,6 +2,8 @@
 // a volume number, an issue number, an ArrayList of Articles,
 // and a reference to the Journal under which it was published.
 
+import java.util.ArrayList;
+
 public class Issue {
   private int year;
   private int volume;
@@ -15,6 +17,10 @@ public class Issue {
     number = newNumber;
     articles = new ArrayList<Article>();
     journal = newJournal;
+  }
+
+  public void addArticle(Article newArticle) {
+    articles.add(newArticle);
   }
 
 }

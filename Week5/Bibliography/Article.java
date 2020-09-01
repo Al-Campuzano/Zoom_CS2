@@ -6,10 +6,16 @@ public class Article {
   private String author;
   private Issue issue;
 
+  public Article(String newTitle, String newAuthor) {
+    this(newTitle, newAuthor, null);
+  }
+
   public Article(String newTitle, String newAuthor, Issue newIssue) {
     title = newTitle;
     author = newAuthor;
     issue = newIssue;
   }
 
+  public String getTitle() { return title; }
+  public String getAuthor() { return author; }
 }
