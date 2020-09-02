@@ -43,6 +43,7 @@ public class ListNode {
     public ListNode addNodeToBeginning(ListNode newNode) {
         this.prev = newNode;
         newNode.next = this;
+        newNode.prev = null;
         return newNode;
     }
 
@@ -55,6 +56,7 @@ public class ListNode {
         }
         newNode.prev = currNode;
         currNode.next = newNode;
+        newNode.next = null;
     }
 
 
