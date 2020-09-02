@@ -19,10 +19,21 @@ public class Article {
   public String getTitle() { return title; }
   public String getAuthor() { return author; }
 
+  // override the equals method so indexOf can be used to find a specific Article
+  // by matching authors
+  public boolean equals(Object obj) {
+    boolean result = false;
+    if (obj instanceof Article) {
+      Article j = (Article)obj;
+      result = author.equals(j.author);
+    }
+    return result;
+  }
+
   public String toString() {
     return author + ". " + title + ". " + issue.getJournal().getTitle()
            + ", " + issue.getVolume() + "(" + issue.getNumber() + "), "
-           + issue.getYear() + ".";  
+           + issue.getYear() + ".";
   }
 
 }
