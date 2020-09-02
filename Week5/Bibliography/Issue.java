@@ -26,6 +26,7 @@ public class Issue {
   public int getYear() { return year; }
   public int getVolume() { return volume; }
   public int getNumber() { return number; }
+  public ArrayList<Article> getArticles() { return articles; }
   public Journal getJournal() { return journal; }
 
   // used to find a specific Article from the ArrayList
