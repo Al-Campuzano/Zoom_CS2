@@ -22,7 +22,7 @@ public class BibliographyUI {
     ArrayList<Issue> listOfIssues = data.getIssues();
     System.out.println("Issues in DB:");
     System.out.println(listOfIssues.get(2));
-    data.addArticleToIssue("Added Article", "Al Campuzano", listOfIssues.get(2));
+    data.addArticleToIssue("Added Article", "Second Author", listOfIssues.get(2));
     for (Issue i : listOfIssues) {
       System.out.println(i);
     }
@@ -32,6 +32,9 @@ public class BibliographyUI {
     for (Article a : articlesFrom1910) {
       System.out.println(a);
     }
+
+    System.out.println("Most published:");
+    System.out.println(data.getMostPublished());
     // System.out.println(data.journals.get(4).getTitle());
     // System.out.println(data.removeJournal("Added Journal"));
     // System.out.println(sJournals.indexOf("First Journal"));

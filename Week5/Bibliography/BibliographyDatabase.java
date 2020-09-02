@@ -40,6 +40,9 @@ public class BibliographyDatabase {
     return result;
   }
 
+  // method to find all articles in Database from specific year
+  // we set up ArrayList of articles then loop through every Journal and Issue
+  // if the issue's year matches then add each article to new ArrayList and return it
   public ArrayList<Article> getArticlesFromYear(int year) {
     ArrayList<Article> results = new ArrayList<Article>();
     for (Journal j : journals) {
@@ -54,6 +57,9 @@ public class BibliographyDatabase {
     return results;
   }
 
+// method to get list of issues in Database
+// we will loop through the journal then the issues and add each issue in turn
+// to ArrayList that will be returned.
   public ArrayList<Issue> getIssues() {
     ArrayList<Issue> results = new ArrayList<Issue>();
     for (Journal j : journals) {
@@ -64,14 +70,32 @@ public class BibliographyDatabase {
     return results;
   }
 
+  // method to add article to specified issue
   public void addArticleToIssue(String title, String author, Issue issue) {
     issue.addArticle(new Article(title, author, issue));
   }
 
   public String getMostPublished() {
-    String result = "";
-
-    return result;
+    Map<String, Integer> dict = new HashMap<String, Integer>();
+    String author, mostArticles = "";
+    for (Journal j : journals) { // loop through journals
+      for (Issue i : j.getIssues()) { // loop through issues
+        for (Article a : i.getArticles()) { // loop through articles
+          author = a.getAuthor(); // the author of the current article
+          // if mostArticles is empty then set it to current author, else leave it
+          mostArticles = mostArticles == "" ? author : mostArticles;
+          // get map value of current author
+          Integer value = dict.get(author);
+          // initialize map value of current author if null otherwise increase it by one
+          dict.put(author, (value == null) ? 1 : value + 1);
+          // if the current author has more articles then update the mostArticles variable
+          if (dict.get(author) > dict.get(mostArticles)){
+            mostArticles = author;
+          }
+        }
+      }
+    }
+    return mostArticles;
   }
 
   // helper method to add articles to ArrayList
