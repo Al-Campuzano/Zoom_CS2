@@ -33,7 +33,7 @@ public class Journal {
     boolean result = false;
     if (obj instanceof Journal) {
       Journal j = (Journal)obj;
-      result = title.equals(j.title);
+      result = title.equals(j.getTitle());
     }
     return result;
   }

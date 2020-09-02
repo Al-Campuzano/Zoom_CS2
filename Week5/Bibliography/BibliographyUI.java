@@ -16,8 +16,11 @@ public class BibliographyUI {
     ArrayList<Journal> sJournals = Journal.getSampleJournals();
 
     data.addListOfJournals(sJournals);
-    System.out.println(data.journals.get(3).getTitle());
-    // System.out.println(sJournals.get(0).equals(sJournals.get(0)));
+    Journal jour1 = new Journal("Added Journal");
+    data.addJournal(jour1);
+    System.out.println(data.journals.get(4).getTitle());
+    System.out.println(data.removeJournal("Added Journal"));
+    System.out.println(sJournals.indexOf("First Journal"));
     // System.out.println(sJournals.get(0).getTitle());
   }
 

@@ -28,6 +28,19 @@ public class BibliographyDatabase {
     journals.add(newJournal);
   }
 
+  // remove a Journal from the list
+  public boolean removeJournal(String title) {
+    boolean result = false;
+    System.out.println("Title: " + title);
+    int index = journals.indexOf(title);
+    System.out.println("index: " + index);
+    if (index >= 0) {
+      journals.remove(index);
+      result = true;
+    }
+    return result;
+  }
+
   // public void addArticle(Article newArticle, Issue issue) {
   //   issue.addArticle(newArticle);
   // }
