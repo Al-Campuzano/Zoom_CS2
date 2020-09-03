@@ -18,27 +18,6 @@ public class Journal {
     issues.add(newIssue);
   }
 
-  // used to find a specific Issue from the ArrayList
-  public Issue getIssue(String title) {
-    Issue result = null;
-    int index = issues.indexOf(title);
-    if (index >= 0) {
-      result = issues.get(index);
-    }
-    return result;
-  }
-
-  // override the equals method so indexOf can be used to find a specific Journal
-  // by matching titles
-  public boolean equals(Object obj) {
-    boolean result = false;
-    if (obj instanceof Journal) {
-      Journal j = (Journal)obj;
-      result = title.equals(j.getTitle());
-    }
-    return result;
-  }
-
   // Creates at least two Journal objects that each contain at least 2 Issues
   // that each contain at least 2 Articles. You can use any values you wish,
   // but it should at least appear to be based on realistic data.
@@ -82,5 +61,30 @@ public class Journal {
 
     return sampleJournals;
   }
+
+  //////
+  // The methods below were not needed for the final UI program so i commented
+  // them out instead of deleting them so I could get them back easily if necessary
+  //////
+
+  // used to find a specific Issue from the ArrayList
+  // public Issue getIssue(String title) {
+  //   Issue result = null;
+  //   int index = issues.indexOf(title);
+  //   if (index >= 0) {
+  //     result = issues.get(index);
+  //   }
+  //   return result;
+  // }
+  // override the equals method so indexOf can be used to find a specific Journal
+  // by matching titles
+  // public boolean equals(Object obj) {
+  //   boolean result = false;
+  //   if (obj instanceof Journal) {
+  //     Journal j = (Journal)obj;
+  //     result = title.equals(j.getTitle());
+  //   }
+  //   return result;
+  // }
 
 }

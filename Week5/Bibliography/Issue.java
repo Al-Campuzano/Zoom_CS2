@@ -29,29 +29,34 @@ public class Issue {
   public ArrayList<Article> getArticles() { return articles; }
   public Journal getJournal() { return journal; }
 
-  // used to find a specific Article from the ArrayList
-  public Article getArticle(String title) {
-    Article result = null;
-    int index = articles.indexOf(title);
-    if (index >= 0) {
-      result = articles.get(index);
-    }
-    return result;
-  }
-
-  // override the equals method so indexOf can be used to find a specific Issue
-  // by matching years
-  public boolean equals(Object obj) {
-    boolean result = false;
-    if (obj instanceof Issue) {
-      Issue j = (Issue)obj;
-      result = year == j.year;
-    }
-    return result;
-  }
-
   public String toString() {
     return journal.getTitle() + ", Volume " + volume + ", Issue " + number;
   }
+
+  //////
+  // The methods below were not needed for the final UI program so i commented
+  // them out instead of deleting them so I could get them back easily if necessary
+  //////
+
+  // used to find a specific Article from the ArrayList
+  // public Article getArticle(String title) {
+  //   Article result = null;
+  //   int index = articles.indexOf(title);
+  //   if (index >= 0) {
+  //     result = articles.get(index);
+  //   }
+  //   return result;
+  // }
+
+  // override the equals method so indexOf can be used to find a specific Issue
+  // by matching years
+  // public boolean equals(Object obj) {
+  //   boolean result = false;
+  //   if (obj instanceof Issue) {
+  //     Issue j = (Issue)obj;
+  //     result = year == j.year;
+  //   }
+  //   return result;
+  // }
 
 }
