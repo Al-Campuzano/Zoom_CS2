@@ -44,13 +44,13 @@ public class Journal {
   // but it should at least appear to be based on realistic data.
   public static ArrayList<Journal> getSampleJournals() {
     // need 2 journals
-    Journal jour1 = new Journal("First Journal");
-    Journal jour2 = new Journal("Second Journal");
+    Journal jour1 = new Journal("Astrophysics Journal");
+    Journal jour2 = new Journal("Journal of Astronomical Sciences");
     // need 4 Issues
-    Issue iss1 = new Issue(1910, 3, 2, jour1);
-    Issue iss2 = new Issue(1920, 7, 4, jour1);
-    Issue iss3 = new Issue(1910, 8, 8, jour2);
-    Issue iss4 = new Issue(1940, 10, 3, jour2);
+    Issue iss1 = new Issue(2010, 3, 2, jour1);
+    Issue iss2 = new Issue(2001, 7, 4, jour1);
+    Issue iss3 = new Issue(1991, 8, 8, jour2);
+    Issue iss4 = new Issue(2010, 10, 3, jour2);
     // add the issues to the journals
     jour1.addIssue(iss1);
     jour1.addIssue(iss2);
@@ -58,14 +58,14 @@ public class Journal {
     jour2.addIssue(iss4);
 
     // need 8 Articles
-    Article art1 = new Article("First Article", "First Author", iss1);
-    Article art2 = new Article("Second Article", "Second Author", iss1);
-    Article art3 = new Article("Third Article", "Third Author", iss2);
-    Article art4 = new Article("Fourth Article", "Fourth Author", iss2);
-    Article art5 = new Article("Fifth Article", "Fifth Author", iss3);
-    Article art6 = new Article("Sixth Article", "Sixth Author", iss3);
-    Article art7 = new Article("Seventh Article", "Seventh Author", iss4);
-    Article art8 = new Article("Eighth Article", "Eighth Author", iss4);
+    Article art1 = new Article("From here to Mars", "Kip Thorne", iss1);
+    Article art2 = new Article("Black Holes", "Stephen Hawking", iss1);
+    Article art3 = new Article("Pulsars among us", "Kip Thorne", iss2);
+    Article art4 = new Article("Using Python to process data", "Monty P. Williamson", iss2);
+    Article art5 = new Article("Uranus: A GAStronomical Study", "U. Rectum", iss3);
+    Article art6 = new Article("Gravitational fields and polarity", "Kip Thorne", iss3);
+    Article art7 = new Article("Back to the Moon", "Ray Bradbury", iss4);
+    Article art8 = new Article("I'm a Rocket man", "William Shatner", iss4);
     // add the articles to the Issues
     iss1.addArticle(art1);
     iss1.addArticle(art2);
@@ -76,10 +76,6 @@ public class Journal {
     iss4.addArticle(art7);
     iss4.addArticle(art8);
 
-// REMOVE THESE AFTER
-// System.out.println(art1);
-// System.out.println(iss1);
-// REMOVE THOSE AFTER
     ArrayList<Journal> sampleJournals = new ArrayList<Journal>(5);
     sampleJournals.add(jour1);
     sampleJournals.add(jour2);

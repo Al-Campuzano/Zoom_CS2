@@ -55,7 +55,11 @@ public class BibliographyUI {
     int yearChoice = input.nextInt();
     // find list of articles in that year from Database
     ArrayList<Article> articlesFound = data.getArticlesFromYear(yearChoice);
-    // print out list of articles found
+    // print out list of articles found, if any
+    if(articlesFound.isEmpty()) {
+      System.out.println("There are no articles from " + yearChoice);
+      return;
+    }
     System.out.println("Here are articles from " + yearChoice + ":");
     for (Article a : articlesFound) {
       System.out.println("  " + a);
