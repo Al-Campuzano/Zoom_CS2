@@ -19,24 +19,22 @@ public class BibliographyUI {
     while (mainChoice != 4) {
       switch (mainChoice) {
         case 1:
-          System.out.print("\nWhat year are you interested in? ");
-          int yearChoice = input.nextInt();
-          ArrayList<Article> articlesFound = data.getArticlesFromYear(yearChoice);
-          System.out.println("Here are articles from " + yearChoice + ":");
-          for (Article a : articlesFound) {
-            System.out.println("  " + a);
-          }
+          findArticleOption();
+          break;
+        case 2:
+          addArticleOption();
           break;
         default:
           System.out.println("Not a valid choice, please try again");
       }
-
       printOptions();
       mainChoice = input.nextInt();
     }
-
+    
+    System.out.println("\nBye!");
   }
 
+  // method to print available options
   public static void printOptions() {
     System.out.println("\nYou may perform the following operations: ");
     System.out.println("  1) Find articles from a given year");
@@ -44,6 +42,51 @@ public class BibliographyUI {
     System.out.println("  3) Find the most-published author");
     System.out.println("  4) Exit");
     System.out.print("Please enter your choice (1, 2, or 3): ");
+  }
+
+  // method to handle when user wants to find an article
+  public static void findArticleOption() {
+    // get year from user
+    System.out.print("\nWhat year are you interested in? ");
+    Scanner input = new Scanner(System.in);
+    int yearChoice = input.nextInt();
+    // find list of articles in that year from Database
+    ArrayList<Article> articlesFound = data.getArticlesFromYear(yearChoice);
+    // print out list of articles found
+    System.out.println("Here are articles from " + yearChoice + ":");
+    for (Article a : articlesFound) {
+      System.out.println("  " + a);
+    }
+  }
+
+  // handles when user wants to add an article
+  public static void addArticleOption() {
+    // Get list of available issues from Database
+    // then print the list
+    System.out.println("\nHere are the available issues: ");
+    ArrayList<Issue> issuesAvail = data.getIssues();
+    for (int i = 0; i < issuesAvail.size(); i++) {
+      System.out.println("  " + (i+1) + ") " + issuesAvail.get(i));
+    }
+
+    // Get the issue choice from user
+    System.out.print("What issue would you like to add to? ");
+    Scanner input = new Scanner(System.in);
+    int issueChoice = input.nextInt();
+    while (issueChoice < 1 || issueChoice > issuesAvail.size()){
+      System.out.print("That is an incorrect choice, please try again: ");
+      issueChoice = input.nextInt();
+    }
+    input.nextLine(); // needed to get the newline character from the previous input
+
+    // Get title and author
+    System.out.print("Please specify the article title: ");
+    String userTitle = input.nextLine();
+    System.out.print("Please specify the article author: ");
+    String userAuthor = input.nextLine();
+
+    // add article to Database
+    data.addArticleToIssue(userTitle, userAuthor, issuesAvail.get(issueChoice - 1));
   }
 
   public static void main(String[] args) {
