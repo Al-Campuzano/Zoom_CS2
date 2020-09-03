@@ -1,6 +1,8 @@
 // First, create a class for an Article. It should have a title, an author,
 // and a reference to the Issue in which it appears (if any).
 
+package data;
+
 public class Article {
   private String title;
   private String author;

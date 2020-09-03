@@ -1,3 +1,6 @@
+package ui;
+
+import data.BibliographyDatabase;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -28,7 +31,7 @@ public class BibliographyUI {
           findMostPublishedOption();
           break;
         default:
-          System.out.println("Not a valid choice, please try again");
+          System.out.print("Not a valid choice, please try again: ");
       }
       printOptions();
       mainChoice = input.nextInt();
@@ -54,33 +57,27 @@ public class BibliographyUI {
     Scanner input = new Scanner(System.in);
     int yearChoice = input.nextInt();
     // find list of articles in that year from Database
-    ArrayList<Article> articlesFound = data.getArticlesFromYear(yearChoice);
+    String articlesFound = data.getArticlesFromYear(yearChoice);
     // print out list of articles found, if any
-    if(articlesFound.isEmpty()) {
+    if(articlesFound.equals("")) {
       System.out.println("There are no articles from " + yearChoice);
       return;
     }
     System.out.println("Here are articles from " + yearChoice + ":");
-    for (Article a : articlesFound) {
-      System.out.println("  " + a);
-    }
+    System.out.println(articlesFound);
   }
 
   // handles when user wants to add an article
   public static void addArticleOption() {
-    // Get list of available issues from Database
-    // then print the list
+    // Print list from Database
     System.out.println("\nHere are the available issues: ");
-    ArrayList<Issue> issuesAvail = data.getIssues();
-    for (int i = 0; i < issuesAvail.size(); i++) {
-      System.out.println("  " + (i+1) + ") " + issuesAvail.get(i));
-    }
-
+    System.out.println(data.getIssues());
+    int numChoices = data.numChoices(); // get number of issues
     // Get the issue choice from user
     System.out.print("What issue would you like to add to? ");
     Scanner input = new Scanner(System.in);
     int issueChoice = input.nextInt();
-    while (issueChoice < 1 || issueChoice > issuesAvail.size()){
+    while (issueChoice < 1 || issueChoice > numChoices){
       System.out.print("That is an incorrect choice, please try again: ");
       issueChoice = input.nextInt();
     }
@@ -93,7 +90,7 @@ public class BibliographyUI {
     String userAuthor = input.nextLine();
 
     // add article to Database
-    data.addArticleToIssue(userTitle, userAuthor, issuesAvail.get(issueChoice - 1));
+    data.addArticleToIssue(userTitle, userAuthor, issueChoice);
   }
 
   public static void findMostPublishedOption() {
@@ -102,7 +99,7 @@ public class BibliographyUI {
 
   public static void main(String[] args) {
 
-    BibliographyUI userInterface = new BibliographyUI(new BibliographyDatabase(Journal.getSampleJournals()));
+    BibliographyUI userInterface = new BibliographyUI(new BibliographyDatabase());
     userInterface.runProgram();
 
   }

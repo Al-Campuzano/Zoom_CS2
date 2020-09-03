@@ -1,5 +1,7 @@
 // Create a class for a Journal. It should have an ArrayList of Issues as well as a title.
 
+package data;
+
 import java.util.ArrayList;
 
 public class Journal {
@@ -66,16 +68,17 @@ public class Journal {
   // The methods below were not needed for the final UI program so i commented
   // them out instead of deleting them so I could get them back easily if necessary
   //////
-
   // used to find a specific Issue from the ArrayList
-  // public Issue getIssue(String title) {
+  // public Issue getIssueFromId(int id) {
   //   Issue result = null;
-  //   int index = issues.indexOf(title);
-  //   if (index >= 0) {
-  //     result = issues.get(index);
+  //   for (Issue i : issues) {
+  //     if (i.getId() == id) {
+  //       result = i;
+  //     }
   //   }
   //   return result;
   // }
+
   // override the equals method so indexOf can be used to find a specific Journal
   // by matching titles
   // public boolean equals(Object obj) {

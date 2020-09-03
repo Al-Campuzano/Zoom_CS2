@@ -1,3 +1,5 @@
+package data;
+
 import java.util.*;
 
 public class BibliographyDatabase {
@@ -6,22 +8,22 @@ public class BibliographyDatabase {
 
   // constructors
   public BibliographyDatabase() {
-    journals = new ArrayList<Journal>();
+    this(Journal.getSampleJournals());
   }
   public BibliographyDatabase(ArrayList<Journal> newJournals) {
     journals = newJournals;
   }
 
   // method to find all articles in Database from specific year
-  // we set up ArrayList of articles then loop through every Journal and Issue
-  // if the issue's year matches then add each article to new ArrayList and return it
-  public ArrayList<Article> getArticlesFromYear(int year) {
-    ArrayList<Article> results = new ArrayList<Article>();
+  // we set up an empty string then loop through every Journal and Issue
+  // if the issue's year matches then add each article to new string and return it
+    public String getArticlesFromYear(int year) {
+    String results = "";
     for (Journal j : journals) {
       for (Issue i : j.getIssues()) {
         if (i.getYear() == year) {
           for (Article a : i.getArticles()) {
-            results.add(a);
+            results += "  " + a.toString() + "\n";
           }
         }
       }
@@ -29,22 +31,43 @@ public class BibliographyDatabase {
     return results;
   }
 
-// method to get list of issues in Database
-// we will loop through the journal then the issues and add each issue in turn
-// to ArrayList that will be returned.
-  public ArrayList<Issue> getIssues() {
-    ArrayList<Issue> results = new ArrayList<Issue>();
+  // method to get list of issues in Database
+  // we will loop through the journal then the issues and add each issue in turn
+  // to String that will be returned.
+  public String getIssues() {
+    String results = "";
+    int id = 1;
     for (Journal j : journals) {
       for (Issue i : j.getIssues()) {
-        results.add(i);
+        results += "  " + id + ") " + i.toString() + "\n";
+        i.setId(id);
+        id++;
       }
     }
     return results;
   }
 
   // method to add article to specified issue
-  public void addArticleToIssue(String title, String author, Issue issue) {
-    issue.addArticle(new Article(title, author, issue));
+  public void addArticleToIssue(String title, String author, int id) {
+    for (Journal j : journals) {
+      for (Issue i : j.getIssues()) {
+        if (i.getId() == id) {
+          i.addArticle(new Article(title, author, i));
+          return;
+        }
+      }
+    }
+  }
+
+  // loops through journals and issues and returns total number of issues available
+  public int numChoices() {
+    int results = 0;
+    for (Journal j : journals) {
+      for (Issue i : j.getIssues()) {
+        results++;
+      }
+    }
+    return results;
   }
 
   public String getMostPublished() {
