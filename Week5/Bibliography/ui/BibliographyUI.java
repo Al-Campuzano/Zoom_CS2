@@ -4,15 +4,15 @@ import data.BibliographyDatabase;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BibliographyUI {
+class BibliographyUI {
 
-  private static BibliographyDatabase data;
+  private BibliographyDatabase data;
 
-  public BibliographyUI(BibliographyDatabase newData) {
+  BibliographyUI(BibliographyDatabase newData) {
     data = newData;
   }
 
-  public static void runProgram() {
+  void runProgram() {
     System.out.println("\nWelcome to the Bibliography Database!");
     printOptions();
     // Get the user's choice
@@ -41,7 +41,7 @@ public class BibliographyUI {
   }
 
   // method to print available options
-  public static void printOptions() {
+  void printOptions() {
     System.out.println("\nYou may perform the following operations: ");
     System.out.println("  1) Find articles from a given year");
     System.out.println("  2) Add an article to an issue");
@@ -51,7 +51,7 @@ public class BibliographyUI {
   }
 
   // method to handle when user wants to find an article
-  public static void findArticleOption() {
+  void findArticleOption() {
     // get year from user
     System.out.print("\nWhat year are you interested in? ");
     Scanner input = new Scanner(System.in);
@@ -68,7 +68,7 @@ public class BibliographyUI {
   }
 
   // handles when user wants to add an article
-  public static void addArticleOption() {
+  void addArticleOption() {
     // Print list from Database
     System.out.println("\nHere are the available issues: ");
     System.out.println(data.getIssues());
@@ -93,7 +93,7 @@ public class BibliographyUI {
     data.addArticleToIssue(userTitle, userAuthor, issueChoice);
   }
 
-  public static void findMostPublishedOption() {
+  void findMostPublishedOption() {
     System.out.println("\nThe most published author is " + data.getMostPublished());
   }
 

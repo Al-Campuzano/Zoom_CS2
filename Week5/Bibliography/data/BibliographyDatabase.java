@@ -17,7 +17,7 @@ public class BibliographyDatabase {
   // method to find all articles in Database from specific year
   // we set up an empty string then loop through every Journal and Issue
   // if the issue's year matches then add each article to new string and return it
-    public String getArticlesFromYear(int year) {
+  public String getArticlesFromYear(int year) {
     String results = "";
     for (Journal j : journals) {
       for (Issue i : j.getIssues()) {
