@@ -4,6 +4,9 @@ public class TestHierarchy {
 
     System.out.println("Implementing Hierarchy Practice");
 
+    Publication pub1 = new Publication("The Amory Wars", 2004, "Science Fiction");
+    System.out.println(pub1);
+
   }
 
 }
