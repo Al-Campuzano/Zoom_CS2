@@ -1,6 +1,6 @@
 public class Book extends Publication {
-  String author;
-  int numPages;
+  private String author;
+  private int numPages;
 
   //// constructors
   // default
@@ -15,7 +15,7 @@ public class Book extends Publication {
   }
 
   // full constructor
-  public Book(String newAuthor, int newNumPages, String newTitle, int newYear, String newGenre) {
+  public Book(String newTitle, int newYear, String newGenre, String newAuthor, int newNumPages) {
     super(newTitle, newYear, newGenre);
     author = newAuthor;
     numPages = newNumPages;
@@ -36,4 +36,8 @@ public class Book extends Publication {
           + ", from " + getYear() + ".";
   }
 
+  // calls the Publication toString() method
+  public String rootToString() {
+    return super.toString();
+  }
 }

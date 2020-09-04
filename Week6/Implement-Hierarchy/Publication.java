@@ -30,4 +30,8 @@ public class Publication {
   public String toString() {
     return "The publication: " + title + ", from " + year + ".";
   }
+
+  public void greetingMessage() {
+    System.out.println("I hope you have a lovely day!");
+  }
 }

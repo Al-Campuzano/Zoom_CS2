@@ -15,7 +15,7 @@ public class Magazine extends Publication {
   }
 
   // full constructor
-  public Magazine(String newEditor, int newIssue, String newTitle, int newYear, String newGenre) {
+  public Magazine(String newTitle, int newYear, String newGenre, String newEditor, int newIssue) {
     // calls the Publication constructor to set these values
     super(newTitle, newYear, newGenre);
     editor = newEditor;
