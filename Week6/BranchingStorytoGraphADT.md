@@ -1,4 +1,4 @@
-*Branching Story to Graph ADT*
+**Branching Story to Graph ADT**
 
 > Suppose we wanted to generalize the BranchingStory class from the interactive story example to be an abstract data type (ADT) that supported representing a directed graph with connections between any object.
 
