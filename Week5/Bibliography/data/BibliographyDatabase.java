@@ -36,25 +36,26 @@ public class BibliographyDatabase {
   // to String that will be returned.
   public String getIssues() {
     String results = "";
-    int id = 1;
+    int index = 1;
     for (Journal j : journals) {
       for (Issue i : j.getIssues()) {
-        results += "  " + id + ") " + i.toString() + "\n";
-        i.setId(id);
-        id++;
+        results += "  " + index + ") " + i.toString() + "\n";
+        index++;
       }
     }
     return results;
   }
 
   // method to add article to specified issue
-  public void addArticleToIssue(String title, String author, int id) {
+  public void addArticleToIssue(String title, String author, int choice) {
+    int index = 1;
     for (Journal j : journals) {
       for (Issue i : j.getIssues()) {
-        if (i.getId() == id) {
+        if (index == choice) {
           i.addArticle(new Article(title, author, i));
           return;
         }
+        index++;
       }
     }
   }

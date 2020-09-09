@@ -10,7 +10,6 @@ public class Issue {
   private int year;
   private int volume;
   private int number;
-  private int id;
   private ArrayList<Article> articles;
   private Journal journal;
 
@@ -18,7 +17,6 @@ public class Issue {
     year = newYear;
     volume = newVolume;
     number = newNumber;
-    id = 0;
     articles = new ArrayList<Article>();
     journal = newJournal;
   }
@@ -30,13 +28,8 @@ public class Issue {
   public int getYear() { return year; }
   public int getVolume() { return volume; }
   public int getNumber() { return number; }
-  public int getId() { return id; }
   public ArrayList<Article> getArticles() { return articles; }
   public Journal getJournal() { return journal; }
-
-  public void setId(int newId) {
-    id = newId;
-  }
 
   public String toString() {
     return journal.getTitle() + ", Volume " + volume + ", Issue " + number;
