@@ -7,6 +7,9 @@ public class TestOutfit {
 
     og.getOutfit();
 
+    Shirt plainT = new Shirt();
+    System.out.println(plainT);
+
   }
 
 }

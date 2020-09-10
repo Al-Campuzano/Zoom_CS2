@@ -2,13 +2,15 @@ import java.util.*;
 
 public class OutfitGenerator {
 
+  // The outfit properties, used to match articles of clothing
   private String name;
   private String color;
   private boolean isFancy;
   private boolean isPlain;
   private boolean forSummer;
-  private ArrayList<Clothing> wardrobe;
-  private Map<String, Clothing> outfit;
+
+  private ArrayList<Clothing> wardrobe; // all Clothing options to build outfit from
+  private Map<String, Clothing> outfit; // the built outfit
 
   //// Constructors
   public OutfitGenerator() {
