@@ -29,8 +29,13 @@ public class OutfitGenerator {
   //// Methods
 
   public void getOutfit() {
+    SampleWardrobe sample = new SampleWardrobe();
+    wardrobe = sample.getSampleWardrobe();
     System.out.println("getOutfit method for " + name);
+    System.out.println(wardrobe);
   }
+
+  // getSampleWardrobe()
 
   // getRandomItem()
 

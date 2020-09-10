@@ -1,11 +1,11 @@
-public class Shirt extends Clothing {
+public class Pants extends Clothing {
 
   //// Constructors
-  public Shirt() {
-    this("T-shirt", "White", false, true, true);
+  public Pants() {
+    this("Jeans", "Blue", false, true, true);
   }
 
-  public Shirt(String name, String color, boolean isFancy, boolean isPlain, boolean isForSummer) {
+  public Pants(String name, String color, boolean isFancy, boolean isPlain, boolean isForSummer) {
     setName(name);
     setColor(color);
     setIsFancy(isFancy);
@@ -15,7 +15,7 @@ public class Shirt extends Clothing {
 
   //// toString method needs to over-write the abstract method from Clothing
   public String toString() {
-    return "A " + (isFancy() ? "fancy " : "casual ")
+    return "A pair of " + (isFancy() ? "fancy " : "casual ")
           + (isPlain() ? "plain " : "colourful ")
           + color() + (isForSummer() ? " summer " : " ")
           + name() + ".";

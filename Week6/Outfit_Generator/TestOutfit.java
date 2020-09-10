@@ -9,6 +9,8 @@ public class TestOutfit {
 
     Shirt plainT = new Shirt();
     System.out.println(plainT);
+    Pants jeans = new Pants();
+    System.out.println(jeans);
 
   }
 
