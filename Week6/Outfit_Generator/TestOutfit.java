@@ -7,10 +7,10 @@ public class TestOutfit {
 
     og.getOutfit();
 
-    Shirt plainT = new Shirt();
-    System.out.println(plainT);
-    Pants jeans = new Pants();
-    System.out.println(jeans);
+    // Shirt plainT = new Shirt();
+    // System.out.println(plainT);
+    // Pants jeans = new Pants();
+    // System.out.println(jeans);
 
   }
 

@@ -32,12 +32,26 @@ public class OutfitGenerator {
     SampleWardrobe sample = new SampleWardrobe();
     wardrobe = sample.getSampleWardrobe();
     System.out.println("getOutfit method for " + name);
-    System.out.println(wardrobe);
+    //System.out.println(wardrobe);
+    System.out.println(getRandomItem());
+    Clothing item = getRandomItem(); // get the first item from wardrobe
+    outfit.put(item.getClass().getName(), item); // put that item in the outfit map
+    // loop while outfit is not full
+    // get random item
+    // if item type is not already in outfit
+    // check for matches
+    // if all matches pass then add item to outfit
+    // print items in outfit
+    // done
   }
 
   // getSampleWardrobe()
 
-  // getRandomItem()
+  private Clothing getRandomItem() {
+    Random rand = new Random();
+    int index = rand.nextInt(wardrobe.size());
+    return wardrobe.get(index);
+  }
 
   // colorMatches(Clothing garb)
 
