@@ -5,20 +5,20 @@ public class Shirt extends Clothing {
     this("T-shirt", "White", false, true, true);
   }
 
-  public Shirt(String name, String color, boolean isFancy, boolean isPlain, boolean isForSummer) {
+  public Shirt(String name, String color, boolean isFancy, boolean isPlain, boolean isForWinter) {
     setName(name);
     setColor(color);
     setIsFancy(isFancy);
     setIsPlain(isPlain);
-    setIsForSummer(isForSummer);
+    setIsForWinter(isForWinter);
   }
 
   //// toString method needs to over-write the abstract method from Clothing
   public String toString() {
     return "A " + (isFancy() ? "fancy " : "casual ")
           + (isPlain() ? "plain " : "colourful ")
-          + color() + (isForSummer() ? " summer " : " ")
-          + name() + ".";
+          + color().toLowerCase() + (isForWinter() ? " winter " : " ")
+          + name().toLowerCase();
   }
 
 }
