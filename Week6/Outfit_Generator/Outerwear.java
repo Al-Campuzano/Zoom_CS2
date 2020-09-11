@@ -11,7 +11,6 @@ public class Outerwear extends Clothing {
     setSeason(season);
     setIsFancy(isFancy);
     setIsPlain(isPlain);
-    // setIsForWinter(isForWinter);
   }
 
   //// toString method needs to over-write the abstract method from Clothing

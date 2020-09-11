@@ -65,7 +65,7 @@ public class OutfitGenerator {
     // to avoid an endless loop in case a good combination cannot be found
     int safety = 0;
     // loop while outfit is not complete
-    while (outfit.size() < numPieces && safety < 300) {
+    while (outfit.size() < numPieces && safety < 500) {
       // get random item
       item = getRandomItem();
       itemType = item.getClass().getName();
@@ -74,14 +74,7 @@ public class OutfitGenerator {
       if (!outfit.containsKey(itemType) && checkMatches(item)){
         System.out.println(item);
         // update the outfit season type to the one from the new garbment
-        if (season.toLowerCase().equals("all")) {
-          season = item.season();
-        }
-        if (item.color().toLowerCase().equals("green")) {
-          hasGreen = true;
-        } else if (item.color().toLowerCase().equals("blue")) {
-          hasBlue = true;
-        }
+        updateOutfit(item);
         outfit.put(itemType, item);
       }
       safety++;
@@ -111,8 +104,17 @@ System.out.println(safety);
   // Return true 50% of the time, so there is some possibility of plain and
   // colourful articles to mix
   private boolean plainMatches(Clothing garb) {
-    Random rand = new Random();
-    return rand.nextInt(2) == 1;
+    // Random rand = new Random();
+    // if (rand.nextInt(2) == 1) {
+    //   isPlain = !isPlain;
+    //   return true;
+    // }
+    //return isPlain == garb.isPlain();
+    if (isPlain == garb.isPlain()) {
+      isPlain = !isPlain;
+      return true;
+    }
+    return false;
   }
 
   private boolean colorMatches(Clothing garb) {
@@ -121,7 +123,6 @@ System.out.println(safety);
 
     if ((hasGreen && garbColor.equals("blue"))
        || (hasBlue && garbColor.equals("green"))) {
-         System.out.println("GREEN AND BLUE");
          return false;
        }
     return true;
@@ -142,6 +143,20 @@ System.out.println(safety);
     }
 
     return false;
+  }
+
+  private void updateOutfit(Clothing item) {
+    // if (isPlain == item.isPlain()) {
+    //   isPlain = !isPlain;
+    // }
+    if (season.toLowerCase().equals("all")) {
+      season = item.season();
+    }
+    if (item.color().toLowerCase().equals("green")) {
+      hasGreen = true;
+    } else if (item.color().toLowerCase().equals("blue")) {
+      hasBlue = true;
+    }
   }
 
 }

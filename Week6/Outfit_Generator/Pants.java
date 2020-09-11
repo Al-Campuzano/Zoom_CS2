@@ -1,7 +1,5 @@
 public class Pants extends Clothing {
 
-  private boolean _isLong;
-
   //// Constructors
   public Pants() {
     this("Jeans", "Blue", "All", false, true);
@@ -13,10 +11,6 @@ public class Pants extends Clothing {
     setSeason(season);
     setIsFancy(isFancy);
     setIsPlain(isPlain);
-  }
-
-  public boolean matchSeason() {
-    return true;
   }
 
   //// toString method needs to over-write the abstract method from Clothing
