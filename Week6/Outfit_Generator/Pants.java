@@ -23,7 +23,8 @@ public class Pants extends Clothing {
   public String toString() {
     return "A pair of " + (isFancy() ? "fancy " : "casual ")
           + (isPlain() ? "plain " : "colorful ")
-          + color().toLowerCase() + " " + name().toLowerCase() + ". ";
+          + color().toLowerCase() + (season().toLowerCase() == "winter" ? " winter " : " ")
+          + name().toLowerCase() + ". ";
   }
 
 }

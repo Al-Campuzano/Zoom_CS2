@@ -5,7 +5,7 @@ public class SampleWardrobe {
    private ArrayList<Clothing> sample;
 
    public SampleWardrobe() {
-     sample = new ArrayList<Clothing>(30);
+     sample = new ArrayList<Clothing>(35);
    }
 
    public ArrayList<Clothing> getSampleWardrobe() {
@@ -29,19 +29,20 @@ public class SampleWardrobe {
      sample.add(shirt5);
      sample.add(shirt6);
 
+
      sample.add(new Pants("Jeans", "black", "all", false, true));
      sample.add(new Pants("Khakis", "brown", "all", false, true));
-     sample.add(new Pants("Slacks", "green", "all", true, true));
+     sample.add(new Pants("Snow pants", "green", "winter", false, false));
      sample.add(new Pants("Shorts", "black", "summer", false, false));
      sample.add(new Pants("Dress pants", "blue", "all", true, true));
      sample.add(new Pants());
 
      sample.add(new Outerwear());
      sample.add(new Outerwear("Coat", "brown", "not summer", true, true));
-     sample.add(new Outerwear("Jacket", "white", "not summer", false, true));
+     sample.add(new Outerwear("Jacket", "white", "winter", false, true));
      sample.add(new Outerwear("Poncho", "green", "all", false, false));
      sample.add(new Outerwear("Trench coat", "black", "all", true, true));
-     sample.add(new Outerwear("Hoodie", "purple", "all", false, true));
+     sample.add(new Outerwear("Hoodie", "purple", "all", false, false));
 
      return sample;
    }

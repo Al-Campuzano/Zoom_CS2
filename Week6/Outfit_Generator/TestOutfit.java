@@ -5,9 +5,9 @@ public class TestOutfit {
     // System.out.println("TestOutfit class");
     OutfitGenerator og = new OutfitGenerator("Random", 3);
 
-    og.getOutfit();
+    og.getNewOutfit();
     System.out.println("\n----Second outfit----\n");
-    og.getOutfit();
+    og.getNewOutfit();
 
     // Shirt plainT = new Shirt();
     // System.out.println(plainT);
