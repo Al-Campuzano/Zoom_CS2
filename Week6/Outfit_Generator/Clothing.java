@@ -22,4 +22,5 @@ abstract public class Clothing {
 
   //// toString abstract method
   public abstract String toString();
+
 }

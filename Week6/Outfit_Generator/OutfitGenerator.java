@@ -31,9 +31,10 @@ public class OutfitGenerator {
   //// Methods
 
   public void getOutfit() {
+    outfit.clear(); // clear old outfit (if any) before making a new one
     SampleWardrobe sample = new SampleWardrobe();
     wardrobe = sample.getSampleWardrobe();
-    System.out.println("getOutfit method for " + name);
+    System.out.println(name + " Outfit:");
 
     Clothing item = getRandomItem(); // get the first item from wardrobe
     System.out.println(item);
@@ -47,34 +48,26 @@ public class OutfitGenerator {
     isPlain = item.isPlain();
     isForWinter = item.isForWinter();
 
-int safety = 0; // to avoid an endless loop
+    // to avoid an endless loop in case a good combination cannot be found
+    int safety = 0;
     // loop while outfit is not complete
-    while (outfit.size() < numPieces && safety < 100) {
+    while (outfit.size() < numPieces && safety < 500) {
       // get random item
       item = getRandomItem();
       itemType = item.getClass().getName();
       // if item type is not already in outfit
-      if (!outfit.containsKey(itemType) && plainMatches(item) && fancyMatches(item)
-         && colorMatches(item) && seasonMatches(item)){
-        // check for matches
-        // if all matches pass then add item to outfit
+      // and all matches pass then add item to outfit
+      if (!outfit.containsKey(itemType) && checkMatches(item)){
         System.out.println(item);
         outfit.put(itemType, item);
       }
-      //System.out.println(outfit.keySet());
-
       safety++;
     }
-System.out.println(outfit);
 System.out.println(safety);
 
 
     // print items in outfit
-
-    // done
   }
-
-  // getSampleWardrobe()
 
   private Clothing getRandomItem() {
     Random rand = new Random();
@@ -82,16 +75,23 @@ System.out.println(safety);
     return wardrobe.get(index);
   }
 
-  // colorMatches(Clothing garb)
+  private boolean checkMatches(Clothing item) {
+    return seasonMatches(item) && plainMatches(item)
+        && fancyMatches(item) && colorMatches(item);
+  }
+
   private boolean colorMatches(Clothing garb) {
-    if ((color.toLowerCase() == "green" && garb.color().toLowerCase() == "blue")
-       || (color.toLowerCase() == "blue" && garb.color().toLowerCase() == "green")) {
+    String outfitColor = color.toLowerCase();
+    String garbColor = garb.color().toLowerCase();
+    if ((outfitColor == "green" && garbColor == "blue")
+       || (outfitColor == "blue" && garbColor == "green")) {
+         System.out.println("GREEN AND BLUE");
          return false;
        }
     return true;
   }
 
-  // fancyMatches()
+  // Check that the outfit and the article of clothing are both "fancy"
   private boolean fancyMatches(Clothing garb) {
     return isFancy == garb.isFancy();
   }
@@ -100,7 +100,8 @@ System.out.println(safety);
   private boolean seasonMatches(Clothing garb) {
     return isForWinter == garb.isForWinter();
   }
-  // plainMatches()
+  // Return true 50% of the time, so there is some possibility of plain and
+  // colourful articles to mix
   private boolean plainMatches(Clothing garb) {
     Random rand = new Random();
     return rand.nextInt(2) == 1;

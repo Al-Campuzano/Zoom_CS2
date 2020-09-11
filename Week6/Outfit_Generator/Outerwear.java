@@ -1,11 +1,11 @@
-public class Shirt extends Clothing {
+public class Outerwear extends Clothing {
 
   //// Constructors
-  public Shirt() {
-    this("T-shirt", "White", false, true, true);
+  public Outerwear() {
+    this("Jacket", "Blue", false, true, true);
   }
 
-  public Shirt(String name, String color, boolean isFancy, boolean isPlain, boolean isForWinter) {
+  public Outerwear(String name, String color, boolean isFancy, boolean isPlain, boolean isForWinter) {
     setName(name);
     setColor(color);
     setIsFancy(isFancy);
