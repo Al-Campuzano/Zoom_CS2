@@ -1,11 +1,11 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 public class SampleWardrobe {
 
    private ArrayList<Clothing> sample;
 
    public SampleWardrobe() {
-     sample = new ArrayList<Clothing>(40);
+     sample = new ArrayList<Clothing>(50);
    }
 
    public ArrayList<Clothing> getSampleWardrobe() {

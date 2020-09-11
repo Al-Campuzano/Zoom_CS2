@@ -1,4 +1,4 @@
-public class Accessory extends Clothing {
+public class Accessory extends Clothing { 
 
   //// Constructors
   public Accessory() {
@@ -15,7 +15,7 @@ public class Accessory extends Clothing {
 
   //// toString method needs to over-write the abstract method from Clothing
   public String toString() {
-    return (isFancy() ? "Fancy " : "Casual ")
+    return "A " + (isFancy() ? "fancy " : "casual ")
           + (isPlain() ? "plain " : "colorful ")
           + color().toLowerCase() + (season().toLowerCase() == "winter" ? " winter " : " ")
           + name().toLowerCase() + ". ";

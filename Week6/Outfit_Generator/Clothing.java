@@ -1,4 +1,4 @@
-abstract public class Clothing {
+abstract public class Clothing {  
 
   private String _name;
   private String _color;
