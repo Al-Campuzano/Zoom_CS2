@@ -5,9 +5,10 @@ public class OutfitGenerator {
   // The outfit properties, used to match articles of clothing
   private String name;
   private String color;
+  private String season;
   private boolean isFancy;
   private boolean isPlain;
-  private boolean isForWinter;
+  // private boolean isForWinter;
   private int numPieces;
 
   private ArrayList<Clothing> wardrobe; // all Clothing options to build outfit from
@@ -46,7 +47,7 @@ public class OutfitGenerator {
     color = item.color();
     isFancy = item.isFancy();
     isPlain = item.isPlain();
-    isForWinter = item.isForWinter();
+    season = item.season();
 
     // to avoid an endless loop in case a good combination cannot be found
     int safety = 0;
@@ -98,7 +99,8 @@ System.out.println(safety);
 
   // seasonMatches()
   private boolean seasonMatches(Clothing garb) {
-    return isForWinter == garb.isForWinter();
+    return true;
+    //return isForWinter == garb.isForWinter();
   }
   // Return true 50% of the time, so there is some possibility of plain and
   // colourful articles to mix
