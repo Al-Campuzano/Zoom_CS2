@@ -1,3 +1,10 @@
+// This tester class just creates an instance of the OutfitGenerator
+// then calls its getNewOutfit() method twice to get two new random outfits
+
+package ui;
+
+import data.OutfitGenerator;
+
 public class TestOutfit {
 
   public static void main(String[] args) {
@@ -7,6 +14,8 @@ public class TestOutfit {
 
     og.getNewOutfit();
     System.out.println("\n----Second outfit----\n");
+    og.setName("Three-piece");
+    og.setNumPieces(3);
     og.getNewOutfit();
 
   }

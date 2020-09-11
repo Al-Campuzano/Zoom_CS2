@@ -1,11 +1,13 @@
-public class Shirt extends Clothing {
+package data;
+
+public class Accessory extends Clothing {
 
   //// Constructors
-  public Shirt() {
-    this("T-shirt", "Green", "all", false, true);
+  public Accessory() {
+    this("Baseball cap", "Green", "All", false, true);
   }
 
-  public Shirt(String name, String color, String season, boolean isFancy, boolean isPlain) {
+  public Accessory(String name, String color, String season, boolean isFancy, boolean isPlain) {
     setName(name);
     setColor(color);
     setSeason(season);
