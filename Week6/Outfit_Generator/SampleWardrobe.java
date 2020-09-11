@@ -59,6 +59,19 @@ public class SampleWardrobe {
      sample.add(new Shoe("Snow boots", "blue", "winter", false, false));
      sample.add(new Shoe("Crocs", "pink", "summer", false, true));
 
+     // Accessories (rings, earrings, watches, ties, etc.)
+
+     // name, color, season, fancy, plain
+
+     // add accessories
+     sample.add(new Accessory());
+     sample.add(new Accessory("Earrings", "silver", "all", true, true));
+     sample.add(new Accessory("Ring", "gold", "all", false, true));
+     sample.add(new Accessory("Tie", "purple", "all", true, false));
+     sample.add(new Accessory("Watch", "black", "all", false, false));
+     sample.add(new Accessory("Toque", "yellow", "not summer", false, false));
+     sample.add(new Accessory("Visor", "white", "summer", false, true));
+
      return sample;
    }
 

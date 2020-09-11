@@ -65,7 +65,7 @@ public class OutfitGenerator {
     // to avoid an endless loop in case a good combination cannot be found
     int safety = 0;
     // loop while outfit is not complete
-    while (outfit.size() < numPieces && safety < 500) {
+    while (outfit.size() < numPieces && safety < 501) {
       // get random item
       item = getRandomItem();
       itemType = item.getClass().getName();
