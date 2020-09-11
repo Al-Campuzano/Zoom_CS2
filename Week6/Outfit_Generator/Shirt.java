@@ -18,7 +18,7 @@ public class Shirt extends Clothing {
   public String toString() {
     return "A " + (isFancy() ? "fancy " : "casual ")
           + (isPlain() ? "plain " : "colorful ")
-          + color().toLowerCase() + name().toLowerCase() + ". ";
+          + color().toLowerCase() + " " + name().toLowerCase() + ". ";
   }
 
 }
