@@ -100,7 +100,9 @@ public class OutfitGenerator {
     return true;
   }
 
-  // seasonMatches()
+  // if either the outfit or the new item are set to be for "all" seasons
+  // or if either of them is set to "not summer" and the other to "winter"
+  // then the new piece will match the outfit so return true, if not then false
   private boolean seasonMatches(Outfit outfit, Clothing garb) {
     String outfitSeason = outfit.season().toLowerCase();
     String garbSeason = garb.season().toLowerCase();
