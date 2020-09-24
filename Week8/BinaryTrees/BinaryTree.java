@@ -130,8 +130,6 @@ public class BinaryTree
       if (leftChild == null && treeLeft == null
         && rightChild == null && treeRight == null)
         {
-          // System.out.println("Both nodes have no children");
-          // System.out.println(data.equals(tree.getData()));
           return data.equals(tree.getData());
         }
 
@@ -169,6 +167,6 @@ public class BinaryTree
       }
 
       // return result plus one to count the current node
-      return result + 1;
+      return ++result; // result + 1
     }
 }
